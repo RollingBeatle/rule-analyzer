@@ -1,0 +1,4 @@
+# Ignore cache in this directory
+__pycache__/
+# Except this file
+!.gitignore
