@@ -5,6 +5,7 @@ from pydoc import doc
 import pyfiglet
 import pandas as pd
 from models.WordBag import WordBag
+from tools.GraphGen import GraphGen
 
 def openFile(filename):
     lines = []
@@ -13,6 +14,9 @@ def openFile(filename):
     return lines
 def export(frame, name):
     frame.to_csv('./results/'+name+'.csv')
+
+#def compareDataFrameResults():
+
 
 if __name__ == "__main__":
     ascii_banner = pyfiglet.figlet_format("Natural Lang Processor")
@@ -30,7 +34,8 @@ if __name__ == "__main__":
     print(document)
 
     modelPL = WordBag(document)
-    modelPL.skImpl()
+    modelPL.tf_ldf(False)
+    #graphGen = GraphGen()
     export(modelPL.res, args.csv)
 
 

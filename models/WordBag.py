@@ -1,6 +1,6 @@
 import re
 import numpy as np
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 import pandas as pd
 
 class WordBag:
@@ -18,6 +18,13 @@ class WordBag:
         df = pd.DataFrame(fitData.toarray(), columns=vec.get_feature_names())
         self.res = df
         print(df)
+
+    def tf_ldf(self, smooth):
+        tfDataVector = TfidfVectorizer(use_idf=True, smooth_idf=smooth, ngram_range=(2,2), stop_words='english')
+        tfDataTransform = tfDataVector.fit_transform(self.data)
+        tfDataFrame = pd.DataFrame(tfDataTransform.toarray(), columns=tfDataVector.get_feature_names())
+        print(tfDataFrame)
+        self.res = tfDataFrame
 
 
     
