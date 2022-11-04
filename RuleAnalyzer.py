@@ -6,6 +6,7 @@ import pyfiglet
 import pandas as pd
 from models.WordBag import WordBag
 from tools.GraphGen import GraphGen
+import pandas as pd
 
 def openFile(filename):
     lines = []
@@ -15,7 +16,20 @@ def openFile(filename):
 def export(frame, name):
     frame.to_csv('./results/'+name+'.csv')
 
-#def compareDataFrameResults():
+def compareDataFrameResults(dataSk, dataTf):
+    sesumSk = dataSk.sum()
+
+    dfsesumsk=pd.DataFrame({'apperances':sesumSk.values, 'word':sesumSk.index})
+    arrayWord = dfsesumsk.iloc[:,1:].values
+    arrayAp = dfsesumsk.iloc[:,0].values
+
+    print(arrayAp)
+    print(arrayWord)
+    GraphGen().barGraph(arrayAp,arrayWord)
+    GraphGen().showResults()
+
+    dfsumTf = dataTf.sum()
+    print(dfsumTf)
 
 
 if __name__ == "__main__":
@@ -35,7 +49,12 @@ if __name__ == "__main__":
 
     modelPL = WordBag(document)
     modelPL.tf_ldf(False)
-    #graphGen = GraphGen()
-    export(modelPL.res, args.csv)
+    dfTf = modelPL.res
+    modelPL.skImpl()
+    dfsk = modelPL.res
+
+    compareDataFrameResults(dfsk,dfTf)
+
+    ##export(modelPL.res, args.csv)
 
 
