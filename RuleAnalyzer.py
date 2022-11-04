@@ -18,14 +18,20 @@ def export(frame, name):
 
 def compareDataFrameResults(dataSk, dataTf):
     sesumSk = dataSk.sum()
-
+    sesumTF = dataTf.sum()
     dfsesumsk=pd.DataFrame({'apperances':sesumSk.values, 'word':sesumSk.index})
-    arrayWord = dfsesumsk.iloc[:,1:].values
-    arrayAp = dfsesumsk.iloc[:,0].values
+    dfsetf = pd.DataFrame({'apperances':sesumTF.values, 'word':sesumTF.index})
 
-    print(arrayAp)
-    print(arrayWord)
-    GraphGen().barGraph(arrayAp,arrayWord)
+    arrayWordSK = dfsesumsk.iloc[:,1:].values
+    arrayApSK = dfsesumsk.iloc[:,0].values
+    arrayWordTF = dfsetf.iloc[:,1:].values
+    arrayApTF = dfsetf.iloc[:,0].values
+
+
+    print(arrayApSK)
+    print(arrayWordSK)
+    GraphGen().barGraph(arrayApSK,arrayWordSK, "Count-Vectorizer")
+    GraphGen().barGraph(arrayApTF,arrayWordTF, "Tfid-Vectorizer")
     GraphGen().showResults()
 
     dfsumTf = dataTf.sum()
@@ -39,12 +45,12 @@ if __name__ == "__main__":
     print("#########################################################")
     logging.basicConfig()
     parser = argparse.ArgumentParser()
-    parser.add_argument('--name', '-n', type=str, help='Name of data file')
+    parser.add_argument('--source', '-s', type=str, help='Name of source file')
     parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
     
     args = parser.parse_args()
 
-    document = openFile(args.name)
+    document = openFile(args.source)
     print(document)
 
     modelPL = WordBag(document)
@@ -54,7 +60,7 @@ if __name__ == "__main__":
     dfsk = modelPL.res
 
     compareDataFrameResults(dfsk,dfTf)
-
-    ##export(modelPL.res, args.csv)
+    if args.csv:
+        export(modelPL.res, args.csv)
 
 
