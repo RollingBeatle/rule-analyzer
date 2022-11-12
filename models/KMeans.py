@@ -17,13 +17,12 @@ class K_Means:
         stemmer = SnowballStemmer('english')
         tokenizer = RegexpTokenizer(r'[a-zA-Z\']+')
     
-    def KmeansModel(self, vector):
-        kmeans = KMeans(n_clusters = 4, n_init = 10)
+    def KmeansModel(self, vector, clusterN):
+        kmeans = KMeans(n_clusters = clusterN, n_init = 10)
         
         #print(self.data)
-        kmeans.fit(self.data)
-        print('hereeeeeeeeeeeeeeeeeeee')
-        print(kmeans.labels_)
+        self.fitted = kmeans.fit(self.data)
+        
         words = vector.get_feature_names()
         common_words = kmeans.cluster_centers_.argsort()[:,-1:-11:-1]
         for num, centroid in enumerate(common_words):

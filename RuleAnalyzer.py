@@ -7,6 +7,7 @@ import pandas as pd
 from models.WordBag import WordBag
 from tools.GraphGen import GraphGen
 import pandas as pd
+from models.KMeans import K_Means
 
 def openFile(filename):
     lines = []
@@ -32,14 +33,28 @@ def compareDataFrameResults(dataSk, dataTf):
     print(arrayWordSK)
     GraphGen().barGraph(arrayApSK,arrayWordSK, "Count-Vectorizer")
     GraphGen().barGraph(arrayApTF,arrayWordTF, "Tfid-Vectorizer")
-    GraphGen().showResults()
+    #GraphGen().showResults()
 
     dfsumTf = dataTf.sum()
     print(dfsumTf)
+    
+def CleanData(data, wBag):
+
+   vector,cleanedArray, pacp2d =  wBag.cleanData(data)
+   model = K_Means(cleanedArray)
+   model.KmeansModel(vector, 35)
+   elbowData = model.elbowMeasure(100)
+   silhoutteData = model.elbowMeasure(100)
+   #GraphGen().lineGraphSingle(titleX="Number of Clusters", titleY="Error Elbow", rangeX=range(2,100), rangeY=elbowData)
+   #GraphGen().lineGraphSingle(titleX="Number of Clusters", titleY="Error Silhouette", rangeX=range(2,100), rangeY=silhoutteData)
+   print(cleanedArray)
+   GraphGen().spreadGraph(model.fitted.cluster_centers_,pacp2d)
+   GraphGen().showResults()
 
 
 if __name__ == "__main__":
-    ascii_banner = pyfiglet.figlet_format("Natural Lang Processor")
+
+    ascii_banner = pyfiglet.figlet_format("NLP Driving Rules Processor")
     print("#########################################################")
     print(ascii_banner)
     print("#########################################################")
@@ -57,9 +72,11 @@ if __name__ == "__main__":
     modelPL.tf_ldf(False)
     dfTf = modelPL.res
     modelPL.skImpl()
-    dfsk = modelPL.res
 
+    dfsk = modelPL.res
+    CleanData(document,modelPL)
     compareDataFrameResults(dfsk,dfTf)
+
     if args.csv:
         export(modelPL.res, args.csv)
 
