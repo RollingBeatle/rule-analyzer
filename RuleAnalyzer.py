@@ -14,6 +14,7 @@ def openFile(filename):
     with open("./data/"+filename) as file:
         lines = [line.rstrip('\n') for line in file]
     return lines
+
 def export(frame, name):
     frame.to_csv('./results/'+name+'.csv')
 
@@ -31,26 +32,51 @@ def compareDataFrameResults(dataSk, dataTf):
 
     print(arrayApSK)
     print(arrayWordSK)
-    GraphGen().barGraph(arrayApSK,arrayWordSK, "Count-Vectorizer")
-    GraphGen().barGraph(arrayApTF,arrayWordTF, "Tfid-Vectorizer")
-    #GraphGen().showResults()
+    gp = GraphGen()
+    gp.barGraph(arrayApSK,arrayWordSK, "Count-Vectorizer")
+    gp.barGraph(arrayApTF,arrayWordTF, "Tfid-Vectorizer")
+    gp.showResults()
 
     dfsumTf = dataTf.sum()
     print(dfsumTf)
     
-def CleanData(data, wBag):
+def testData(data, wBag):
 
    vector,cleanedArray, pacp2d =  wBag.cleanData(data)
    model = K_Means(cleanedArray)
-   model.KmeansModel(vector, 35)
+   model.KmeansModel(vector, 4)
    elbowData = model.elbowMeasure(100)
-   silhoutteData = model.elbowMeasure(100)
+   silhoutteData = model.elbowMeasure(4)
    #GraphGen().lineGraphSingle(titleX="Number of Clusters", titleY="Error Elbow", rangeX=range(2,100), rangeY=elbowData)
-   #GraphGen().lineGraphSingle(titleX="Number of Clusters", titleY="Error Silhouette", rangeX=range(2,100), rangeY=silhoutteData)
+   gp1 = GraphGen()
+   gp1.lineGraphSingle(titleX="Number of Clusters", titleY="Error Silhouette", rangeX=range(2,4), rangeY=silhoutteData)
    print(cleanedArray)
-   GraphGen().spreadGraph(model.fitted.cluster_centers_,pacp2d)
-   GraphGen().showResults()
+   #gp1.spreadGraph(model.fitted.cluster_centers_,pacp2d)
+   gp1.showResults()
 
+
+def main():
+    ascii_banner = pyfiglet.figlet_format("NLP Driving Rules Processor")
+    print("#########################################################")
+    print(ascii_banner)
+    print("#########################################################")
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source', '-s', type=str, help='Name of source file')
+    parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
+    parser.add_argument('--model', '-c', type=str, help='type of model to execute')
+    args = parser.parse_args()
+
+    option = input('Execute silhouette test, elbow test or none? (S,E,N)')
+    document = openFile(args.source)
+
+    document = openFile(args.source)
+    print(document)
+    args = parser.parse_args()
+
+class Result:
+    def __init__(self):
+        pass
 
 if __name__ == "__main__":
 
@@ -58,7 +84,7 @@ if __name__ == "__main__":
     print("#########################################################")
     print(ascii_banner)
     print("#########################################################")
-    logging.basicConfig()
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', '-s', type=str, help='Name of source file')
     parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
@@ -74,7 +100,7 @@ if __name__ == "__main__":
     modelPL.skImpl()
 
     dfsk = modelPL.res
-    CleanData(document,modelPL)
+    testData(document,modelPL)
     compareDataFrameResults(dfsk,dfTf)
 
     if args.csv:

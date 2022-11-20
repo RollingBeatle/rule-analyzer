@@ -44,5 +44,6 @@ class K_Means:
             kmeans.fit(self.data)
             score = silhouette_score(self.data, kmeans.labels_)
             clusterR.append(score)
-        return clusterR    
+        return clusterR
+
     
