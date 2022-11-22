@@ -4,8 +4,9 @@ class GraphGen:
     def __init__(self):
        pass
     
-    def barGraph(self, data, names, title):
-        fig = plt.figure(figsize=(10,7))
+    def barGraph(self, data, names, title, figSize):
+        #fig = plt.figure(figsize=(10,7))
+        plt.figure(figSize)
         for i in range(0,len(data)):
             plt.bar(names[i], data[i],  width=0.3 ) #label="$"+names[i]+"$",
 
@@ -18,7 +19,8 @@ class GraphGen:
     def showResults(self):
         plt.show()
 
-    def lineGraphSingle (self, rangeX, rangeY, titleX, titleY):
+    def lineGraphSingle (self, rangeX, rangeY, titleX, titleY,fig):
+        plt.figure(fig)
         plt.plot(rangeX, rangeY)
         plt.xticks(rangeX)
         plt.xlabel(titleX)

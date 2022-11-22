@@ -8,6 +8,9 @@ from models.WordBag import WordBag
 from tools.GraphGen import GraphGen
 import pandas as pd
 from models.KMeans import K_Means
+from models.Models import Model
+
+models = Model()
 
 def openFile(filename):
     lines = []
@@ -40,22 +43,40 @@ def compareDataFrameResults(dataSk, dataTf):
     dfsumTf = dataTf.sum()
     print(dfsumTf)
     
-def testData(data, wBag):
 
-   vector,cleanedArray, pacp2d =  wBag.cleanData(data)
-   model = K_Means(cleanedArray)
-   model.KmeansModel(vector, 4)
-   elbowData = model.elbowMeasure(100)
-   silhoutteData = model.elbowMeasure(4)
-   #GraphGen().lineGraphSingle(titleX="Number of Clusters", titleY="Error Elbow", rangeX=range(2,100), rangeY=elbowData)
-   gp1 = GraphGen()
-   gp1.lineGraphSingle(titleX="Number of Clusters", titleY="Error Silhouette", rangeX=range(2,4), rangeY=silhoutteData)
-   print(cleanedArray)
-   #gp1.spreadGraph(model.fitted.cluster_centers_,pacp2d)
-   gp1.showResults()
+def kmeansModel(document):
+    option = input('Execute silhouette test, elbow test or none? (S,E,N)')
+    inputData = models.tfidV(data=document)
+    if option == 'S':
+        clusters = models.silhoutteMeasure(rangeTest=100,data=inputData)
+    elif option == 'E':
+        clusters = models.elbowMeasure(inputData)
+    else:
+        clusters = None
+    
+    gp1 = GraphGen()
+    if clusters:
+        gp1.lineGraphSingle(titleX="Number of Clusters", titleY="Error "+inputData, rangeX=range(2,100), rangeY=inputData, fig=100)
+    inputDoc = models.tfidV(document)    
+    kmeans = models.kmeans(data=inputDoc, clusterN=4)
+    gp1.spreadGraph(kmeans.cluster_centers_, models.pca2d)
+    gp1.showResults()
+
+def bowModel(data):
+    result = models.tfidV(data).sum()
+    dfsetf = pd.DataFrame({'apperances':result.values, 'word':result.index})
+    arrayWordTF = dfsetf.iloc[:,1:].values
+    arrayApTF = dfsetf.iloc[:,0].values
+
+    gp = GraphGen()
+
+    gp.barGraph(arrayApTF, arrayWordTF, "Count-Vectorizer", figSize=200)
+    gp.showResults()
+
 
 
 def main():
+
     ascii_banner = pyfiglet.figlet_format("NLP Driving Rules Processor")
     print("#########################################################")
     print(ascii_banner)
@@ -64,13 +85,18 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', '-s', type=str, help='Name of source file')
     parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
-    parser.add_argument('--model', '-c', type=str, help='type of model to execute')
+    parser.add_argument('--model', '-m', type=str, help='type of model to execute')
     args = parser.parse_args()
 
-    option = input('Execute silhouette test, elbow test or none? (S,E,N)')
-    document = openFile(args.source)
 
     document = openFile(args.source)
+
+    if args.model == 'kmeans':
+        kmeansModel(document)
+    elif args.model == 'bow':
+        bowModel(document)
+
+
     print(document)
     args = parser.parse_args()
 
@@ -79,31 +105,7 @@ class Result:
         pass
 
 if __name__ == "__main__":
+    main()
 
-    ascii_banner = pyfiglet.figlet_format("NLP Driving Rules Processor")
-    print("#########################################################")
-    print(ascii_banner)
-    print("#########################################################")
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--source', '-s', type=str, help='Name of source file')
-    parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
-    
-    args = parser.parse_args()
-
-    document = openFile(args.source)
-    print(document)
-
-    modelPL = WordBag(document)
-    modelPL.tf_ldf(False)
-    dfTf = modelPL.res
-    modelPL.skImpl()
-
-    dfsk = modelPL.res
-    testData(document,modelPL)
-    compareDataFrameResults(dfsk,dfTf)
-
-    if args.csv:
-        export(modelPL.res, args.csv)
 
 

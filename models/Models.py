@@ -18,7 +18,7 @@ class Model:
     def tfidV(self, data):
         #Define the TfidV and set to bigrams, determine the importance of the term
         vectorizer = TfidfVectorizer(stop_words = self.stop_words,use_idf=True, ngram_range=(2,2)) #Check smooth parameter?
-
+        self.vectorizerTfi = vectorizer
         matrix = vectorizer.fit_transform(data)
         #saving vector for other models
         self.tfidVector  = matrix
@@ -26,18 +26,20 @@ class Model:
         tfDataFrame = pd.DataFrame(matrix.toarray(), columns=vectorizer.get_feature_names())
         #pca = SparsePCA(n_components=2).fit(X.toarray())
         #pca2d = pca.transform(X.toarray())
+        pca = SparsePCA(n_components=2).fit(matrix.toarray())
+        self.pca2d = pca.transform(matrix.toarray())
         return tfDataFrame
     
     def kmeans(self, data, clusterN):
         kmeans = KMeans(n_clusters = clusterN, n_init = 10)
         
-        #print(self.data)
-        self.fitted = kmeans.fit(self.data)
+        self.fitted = kmeans.fit(self.tfidVector)
         
-        words = vector.get_feature_names()
+        words = self.vectorizerTfi.get_feature_names()
         common_words = kmeans.cluster_centers_.argsort()[:,-1:-11:-1]
         for num, centroid in enumerate(common_words):
             print(str(num) + ' : ' + ', '.join(words[word] for word in centroid))
+        return kmeans
 
     def svm (self, data):
         pass
