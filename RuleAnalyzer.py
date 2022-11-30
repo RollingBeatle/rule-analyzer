@@ -19,28 +19,6 @@ def openFile(filename):
 def export(frame, name):
     frame.to_csv('./results/'+name+'.csv')
 
-def compareDataFrameResults(dataSk, dataTf):
-    sesumSk = dataSk.sum()
-    sesumTF = dataTf.sum()
-    dfsesumsk=pd.DataFrame({'apperances':sesumSk.values, 'word':sesumSk.index})
-    dfsetf = pd.DataFrame({'apperances':sesumTF.values, 'word':sesumTF.index})
-
-    arrayWordSK = dfsesumsk.iloc[:,1:].values
-    arrayApSK = dfsesumsk.iloc[:,0].values
-    arrayWordTF = dfsetf.iloc[:,1:].values
-    arrayApTF = dfsetf.iloc[:,0].values
-
-
-    print(arrayApSK)
-    print(arrayWordSK)
-    gp = GraphGen()
-    gp.barGraph(arrayApSK,arrayWordSK, "Count-Vectorizer")
-    gp.barGraph(arrayApTF,arrayWordTF, "Tfid-Vectorizer")
-    gp.showResults()
-
-    dfsumTf = dataTf.sum()
-    print(dfsumTf)
-    
 
 def kmeansModel(document):
     option = input('Execute silhouette test, elbow test or none? (S,E,N)')
@@ -95,7 +73,7 @@ def main():
         bowModel(document)
 
 
-    print(document)
+    #print(document)
     args = parser.parse_args()
 
 class Result:
