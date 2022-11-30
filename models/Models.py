@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
-from nltk.tokenize import RegexpTokenizer
-from nltk.stem.snowball import SnowballStemmer
 from sklearn.metrics import silhouette_score
 from sklearn.feature_extraction import text
 from sklearn.decomposition import SparsePCA

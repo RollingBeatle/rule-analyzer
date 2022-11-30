@@ -4,10 +4,8 @@ import os
 from pydoc import doc
 import pyfiglet
 import pandas as pd
-from models.WordBag import WordBag
 from tools.GraphGen import GraphGen
 import pandas as pd
-from models.KMeans import K_Means
 from models.Models import Model
 
 models = Model()
@@ -84,7 +82,7 @@ def main():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--source', '-s', type=str, help='Name of source file')
-    parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
+    #parser.add_argument('--csv', '-c', type=str, help='Name of file to save')
     parser.add_argument('--model', '-m', type=str, help='type of model to execute')
     args = parser.parse_args()
 
