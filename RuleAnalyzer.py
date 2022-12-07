@@ -7,6 +7,7 @@ import pandas as pd
 from tools.GraphGen import GraphGen
 import pandas as pd
 from models.Models import Model
+import seaborn as sns
 
 models = Model()
 
@@ -26,16 +27,27 @@ def kmeansModel(document):
     if option == 'S':
         clusters = models.silhoutteMeasure(rangeTest=100,data=inputData)
     elif option == 'E':
-        clusters = models.elbowMeasure(inputData)
+        clusters = models.elbowMeasure(rangeTest=100, data=inputData)
     else:
         clusters = None
-    
+    clusterNumb = input('Please input the number of cluster to work with: \n')
     gp1 = GraphGen()
     if clusters:
         gp1.lineGraphSingle(titleX="Number of Clusters", titleY="Error "+inputData, rangeX=range(2,100), rangeY=inputData, fig=100)
     inputDoc = models.tfidV(document)    
-    kmeans = models.kmeans(data=inputDoc, clusterN=4)
-    gp1.spreadGraph(kmeans.cluster_centers_, models.pca2d)
+    kmeans = models.kmeans(data=inputDoc, clusterN=int(clusterNumb))
+    df = pd.DataFrame()
+
+    cluster_map ={}
+    for i in range (0,int(clusterNumb)):
+        cluster_map.update({i: "Cluster "+str(i+1)})
+
+    df['cluster'] = models.labels
+    df['cluster'] = df['cluster'].map(cluster_map)
+    df['x0'] = models.x0
+    df['x1'] = models.x1
+    gp1.scatterSNS(df)
+    #gp1.spreadGraph(kmeans.cluster_centers_, models.pca2d)  ,  3: "Cluster 4", 4: "Cluster 5"
     gp1.showResults()
 
 def bowModel(data):

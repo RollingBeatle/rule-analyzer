@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 class GraphGen:
     def __init__(self):
@@ -29,8 +30,16 @@ class GraphGen:
     def spreadGraph(self, coordX, coordY):
         plt.scatter(coordY[:,0], coordY[:,1])
         plt.scatter(coordX[:,0], coordX[:,1], c='black', s=300, alpha=0.6)
+
+    def scatterSNS(self,dataF):
+        plt.figure(figsize=(12, 7))
+        # set title
+        plt.title("Clustering k-means TF-IDF", fontdict={"fontsize": 18})
+        # set axes names
+        plt.xlabel("X0", fontdict={"fontsize": 16})
+        plt.ylabel("X1", fontdict={"fontsize": 16})
+        #  create scatter plot with seaborn, where hue is the class used to group the data
+        #for i in dataF:
+        print(dataF)
+        sns.scatterplot(data=dataF, x='x0', y='x1', hue='cluster')
         
-
-
-
-    

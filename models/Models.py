@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.feature_extraction import text
-from sklearn.decomposition import SparsePCA
+from sklearn.decomposition import PCA
 
 class Model: 
 
@@ -22,18 +22,35 @@ class Model:
         self.tfidVector  = matrix
         #transform to dataFrame to show in pandas representation
         tfDataFrame = pd.DataFrame(matrix.toarray(), columns=vectorizer.get_feature_names())
-        #pca = SparsePCA(n_components=2).fit(X.toarray())
-        #pca2d = pca.transform(X.toarray())
-        pca = SparsePCA(n_components=2).fit(matrix.toarray())
-        self.pca2d = pca.transform(matrix.toarray())
+        print(tfDataFrame)
+
+        pca = PCA(n_components=2, random_state=42)
+        print(matrix) 
+        #tfDataFrame.to_csv('')
+
+        self.pca2d = pca.fit_transform(matrix.toarray())
+        self.x0 = self.pca2d[:, 0]
+        self.x1 = self.pca2d[:, 1]
+        
         return tfDataFrame
     
     def kmeans(self, data, clusterN):
         kmeans = KMeans(n_clusters = clusterN, n_init = 10)
         
-        self.fitted = kmeans.fit(self.tfidVector)
+        self.fitted = kmeans.fit_predict(self.tfidVector)
         
-        words = self.vectorizerTfi.get_feature_names()
+        self.labels = kmeans.labels_
+        words = self.vectorizerTfi.get_feature_names_out()
+        df = pd.DataFrame(self.tfidVector.todense()).groupby(self.labels).mean() # groups the TF-IDF vector by cluster
+        print(words)
+        print(self.vectorizerTfi)
+       # terms = self.tfidVector. # access tf-idf terms
+        for i,r in df.iterrows():
+            print('\nCluster {}'.format(i))
+
+            print(','.join([words[t] for t in np.argsort(r)[-10:]])) # for each row of the dataframe, find the n terms that have the highest tf idf score
+
+
         common_words = kmeans.cluster_centers_.argsort()[:,-1:-11:-1]
         for num, centroid in enumerate(common_words):
             print(str(num) + ' : ' + ', '.join(words[word] for word in centroid))
@@ -55,7 +72,7 @@ class Model:
         clusterR = []
         for k in range(2,rangeTest):
             kmeans = KMeans(n_clusters=k, init="random", n_init=10, max_iter=300)
-            kmeans.fit(self.data)
+            kmeans.fit(self.tfidVector)
             score = silhouette_score(data, kmeans.labels_)
             clusterR.append(score)
         return clusterR
