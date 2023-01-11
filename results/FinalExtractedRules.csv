@@ -1,0 +1,529 @@
+Rule,Semantic text,Improved version,Category,Sate
+"IF (self, miss, turn), THEN (driving, until, turn)",if you miss a turn keep driving until you can safely and legall y turn around,,Vehicle Behavior,CA
+"IF (self, block, intersection), THEN (self, get, ticket)",you may get a ticket if you block the intersection,,Vehicle Behavior,CA
+"IF (self, miss, exit), THEN (continue, around, exit)",if you miss your exit continue around until you return to your exit,,Vehicle Behavior,CA
+"IF (roundabout, hasA, lanes), THEN OR((self, choose, entr), (exit, on, destination))",if the roundabout has multiple lanes choose your entr y or exit lane based on your destination,,Vehicle Behavior,CA
+"IF OR((lanes, isA, narrow), (shoulder, isA, closed)), THEN (Watch, for, bicycles)",watch for bicycles if lanes are narrow or the shoulder is closed,,Vehicle Behavior,CA
+"IF (view, isA, blocked), THEN (move, until, see)",if your view is blocked move slowly forward until you can see,,Vehicle Behavior,CA
+"IF (view, isA, blocked), THEN (vehicle, on, side)",if your view is blocked assume there is a vehicle on the other side,,Vehicle Behavior,CA
+"IF AND((train, isA, approaching), (self, warning, lights)), THEN (self, exit, vehicle)",if a train is approaching and warning lights are immediately exit your vehicle,,Safety Hazards,CA
+"IF (train, isA, approaching), THEN (proceed, with, caution)",if a train is not approaching proceed with caution,,Vehicle Behavior,TX
+"IF (train, isA, approaching), THEN AND((remain, until, train), (lights, stop, flashing))",if a train is approaching remain stopped until the train passes and the lights stop flashing,,Road Signs,TX
+"IF (self, isA, lane), THEN (self, merge, left)",if you are driving in the right lane you should merge into the left,,Vehicle Behavior,TX
+"IF (self, using, hand), THEN AND((self, extend, hand), (arm, out, car))",if using hand signals extend your hand and arm well out of the car window as shown below,,Vehicle Behavior,TX
+"IF (self, return, lane), THEN (Avoid, in, quickly)",avoid cutting in too quickly if you must return to your original lane,,Vehicle Behavior,TX
+"IF (self, using, hand), THEN (signal, until, intersection)",if using a hand signal hold the signal until you are close enough to the intersection for others to know your intention,,Vehicle Behavior,TX
+"IF (self, use, cell), THEN OR((self, pull, road), (self, use, headset))",if you must use a cell phone safely pull off the road or use a headset,,Vehicle Behavior,TX
+"IF NOT(self, do, cloth), THEN (self, raise, hood)",if you do not have a white cloth raise your hood,,Safety Hazards,TX
+"IF (youre, following, truck), THEN (blind spot, at, rear)",if youre following a truck stay out of its blind spot at the rear,,Vehicle Behavior,TX
+"IF (truck, on, upgrade), THEN (space, in, case)",if you are stopped behind a truck on an upgrade leave space in case the truck drifts back when it starts to move,,Vehicle Behavior,TX
+"IF (pass, on, right), THEN (self, avoid, crash)",to avoid a crash dont pass a truck on the right if there is a possibility the truck might make a right turn,,Vehicle Behavior,TX
+"IF (self, make, call), THEN AND((self, pull, road), (self, make, call))",if you must make a call pull safely off the road and make the call,,Vehicle Behavior,TX
+"IF (self, isA, curb), THEN OR((Stop, at, curb), (edge, of, road))",stop at the curb or the edge of the road if there is no curb,"IF (self, isA, curb), THEN OR((Stop, at, curb), (edge, of, road))",Vehicle Behavior,FL
+"IF (self, hasA, time), THEN AND((self, reduce, speed), (self, sound, horn))",if you have time to avoid hitting an animal reduce your speed tap your brakes and sound your horn,"IF (self, hitting, animal), THEN AND((self, reduce, speed), (self, sound, horn))",Safety Hazards,FL
+"IF (conditions, require, it), THEN (stop, at, YIELD)",you must come to a full stop at a yield sign if trac conditions require it,,Vehicle Behavior,NY
+"IF (self, isA, intersection), THEN (drive, out, intersection)",if you are in an intersection drive out of the intersection before you pull over,,Vehicle Behavior,NY
+"IF (courtesy, if, so), THEN (self, isA, right-of-way)",while you are not required to yield the you should yield as a courtesy if you can safely do so,,Vehicle Behavior,NY
+"IF (self, see, train), THEN AND((wait, until, passes), (self, cross, tracks))",if you see a train coming wait until it passes and then cross the tracks when it is safe to do so,,Environmental Conditions,NY
+"IF (vehicle, hasA, anti-lock), THEN (foot, with, pressure)",if your vehicle has brakes abs keep your foot with even pressure on the brake pedal,,Safety Hazards,NY
+"IF NOT(vehicle, does, ABS), THEN (self, pump, pedal)",if your vehicle does not have abs pump the pedal carefully,,Safety Hazards,NY
+"IF (tire, blows, out), THEN AND((self, hold, wheel), (foot, o, gas))",if a tire blows out hold the steering wheel tight and slowly take your foot o the gas pedal,,Safety Hazards,NY
+"IF (BRAKE, If, brake), THEN (try, pumping, pres)",brake failure if your brake pedal suddenly goes to the oor try pumping it to increase pres sure,,Safety Hazards,NY
+"IF (FIRE, If, hood), THEN AND((pull, o, road), (self, park, vehicle))",fire if you see smoke come from under the hood pull o the road and park your vehicle,,Safety Hazards,NY
+"IF (self, drive, spots), THEN (self, isA, driver)",if you drive in these blind spots you can not be seen by the driver,"IF (self, drive, blind spots), THEN NOT (driver, sees, self)",Safety Hazards,NY
+"IF (Blind, in, Back), THEN (chance, of, crash)",blind spots in back if you remain in the back blind spot of a large vehicle you increase the chance of a crash,,Safety Hazards,NY
+"IF (self, see, someone), THEN (move, over, lane)",if you see someone following you too closely tailgating move over to the right lane if possible,"IF (self, see, someone following), THEN (move, over, lane)",Vehicle Behavior,PN
+"IF (vehicle, toward, you), THEN (self, flash, beams)",if a vehicle using high beams comes toward you flash your high beams quickly a few times,,Safety Hazards,PN
+"IF NOT(driver, does, lights), THEN (look, toward, side)",if the driver does not dim their lights look toward the right side of the road,,Safety Hazards,PN
+"IF (fog, isA, see), THEN NOT(Do, start, trip)",do not start a trip if the fog is so dense you can not see,"IF (fog, is, dense), THEN NOT(Do, start, trip)",Safety Hazards,PN
+"IF (self, isA, collision), THEN (stay, in, vehicle)",if you are involved in a collision whenever possible stay in your vehicle,,Safety Hazards,PN
+"IF (center, from, cross), THEN AND((watch, for, traffic), (center, preparing, turn))",if entering the center lane from a cross street watch for through traffic and for center lane traffic preparing to turn,,Vehicle Behavior,PN
+"IF (self, miss, exit), THEN (self, take, one)",if you miss your exit take the next one,,Vehicle Behavior,PN
+"IF (traffic, of, you), THEN (wait, for, cross)",if traffic slows ahead of you wait for it to clear before starting to cross,"IF (traffic, ahead , you), THEN (wait, for, cross)",Environmental Conditions,PN
+"IF (self, hit, brakes), THEN (skid, isA, worse)",if you hit the brakes the skid will be worse,,Safety Hazards,PN
+"IF AND(NOT(vehicle, stop, stop), (danger, of, crashing)), THEN (ignition, OFF, resort)",turn your ignition off as a last resort if the vehicle still will not stop and you are in danger of crashing,,Safety Hazards,PN
+"IF (FUNERAL, If, procession), THEN (yield, in, procession)",funeral procession if you see a funeral procession on the road yield to vehicles in the procession,,Environmental Conditions,PN
+"IF (hazard, on, shoulder), THEN (use, controlled, wheels)",if you must brake to avoid a hazard on the shoulder use gradual controlled braking to avoid locking the wheels,,Environmental Conditions,PN
+"IF (self, isA, collision), THEN (car, off, road)",if you are involved in a collision get your car off the road as quickly as possible,,Safety Hazards,OH
+"IF NOT(self, move, vehicle), THEN AND((self, leave, flashers), AND((lights, on, on), (flares, if, them)))",if you can not move your vehicle leave your flashers and lights on and set up flares if you have them,,Safety Hazards,OH
+"IF (self, isA, lanes), THEN (driver, reduce, speed)",if it is not safe to change lanes the driver should reduce speed when approaching and passing the disabled vehicle,,Vehicle Behavior,IL
+"IF (intersection, isA, clear), THEN NOT(driver, does, stop)",if the intersection is clear the driver does not need to stop,,Vehicle behavior,IL
+"IF (brakes, do, lock), THEN AND((self, release, brake), (self, reapply, pressure))",if the brakes do lock release the brake pedal and immediately reapply with slightly less pressure,,Safety Hazards,NJ
+"IF (vehicle, off, pavement), THEN (Slow, onto, road)",if a vehicle runs off the pavement slow down regain control turn slowly onto the road defensive drivingpage,,Safety Hazards,NJ
+"IF (shoulder, of, road), THEN NOT(motorist, brake, hard)",a motorist should not brake hard if turning onto a soft shoulder of a road,,Safety Hazards,NJ
+"IF OR((self, following, motorcyclists), (bicyclists, If, motorcycle)), THEN (self, need, distance)",when following motorcyclists or bicyclists if the motorcycle or bicycle rider should fall you need extra distance to avoid the rider,,Vehicle Behavior,WA
+"IF (self, isA, doubt), THEN AND((wait, until, sure), (self, isA, space))",if you are in doubt wait to pass until you are sure that there is enough space,,Vehicle Behavior,WA
+"IF AND((self, isA, vehicle), NOT(self, see, drivers)), THEN NOT(driver, see, either)",if you are following a large vehicle and you can not see the drivers mirrors then the driver can not see you either,,Vehicle Behavior,WA
+"IF (self, isA, intersection), THEN (self, continue, turn)",if you are already in the intersection you should continue your turn and clear the intersection safely,,Vehicle Behavior,AZ
+"IF (car, does, hydroplane), THEN (foot, off, accelerator)",if your car does hydroplane take your foot off the accelerator,,Safety Hazards,AZ
+"IF NOT(vehicle, does, anti-lock), THEN (self, Pump, brakes)",if a vehicle does not have brakes pump the brakes rapidly,,Safety Hazards,AZ
+"IF (traffic, require, it), THEN (self, come, stop)",you must come to a complete stop if traffic conditions require it,,Vehicle Behavior,MA
+"IF (room, for, safely), THEN OR((self, enter, intersection), (drive, across, crosswalk))",you may only enter an intersection or drive across a crosswalk if there is enough room for you to drive through safely,,Vehicle Behavior,MA
+"IF NOT(driver, does, rules), THEN (self, give, right-of-way)",if another driver does not follow these rules you should always give the,,Vehicle Behavior,MA
+"IF (rotary, hasA, lanes), THEN (look, for, signs)",if the rotary has multiple lanes look for signs to help you choose the proper lane,,Road Signs,MA
+"IF NOT(vehicle, does, antilock), THEN (self, pump, brake)",if your vehicle does not have antilock brakes you should pump the brake pedal several times rapidly to build up brake fluid pressure,,Safety Hazards,MA
+"IF (Stuck, If, gas), THEN AND((car, in, neutral), (press, slow, down))",stuck gas pedal if your gas pedal sticks put your car in neutral and press the brake pedal to slow down,,Safety Hazards,MA
+"IF (gap, in, traffic), THEN (self, complete, turn)",if thereis a safe gap in oncoming traffic you may complete the turn,,Vehicle Behavior,QL
+"IF (traffic, arrows, lane), THEN (direction, of, arrows)",if traffic lane arrows apply to the lane drivein the direction of the arrows,,Road Signs,QL
+"IF (traffic, arrows, lane), THEN (drive, in, direction)",if traffic lane arrows apply to the lane drive in the direction of the arrows,,Road Signs,QL
+"IF (arrows, indicate, directions), THEN (self, drive, directions)",if the arrows indicate two or more directions you may drive in any of the directions indicated,,Road Signs,QL
+"IF (traffic, arrows, lane), THEN (drive, in, direction)",if traffic lane arrows apply to the lane drive in the direction of the arrows,,Road Signs,QL
+"IF AND((self, cer, tain), (days, apply, meters)), THEN (section, for, times)",if cer tain hours and days apply to the meters you can park in this section for free outside these times,,Road Signs,QL
+"IF (path, of, vehicle), THEN (self, give, way)",you must give way if you are turning across the path of a vehicle,,Vehicle Behavior,QL
+"IF (self, isA, sign), THEN (speed, on, sign)",if there is such a sign you should slow down to at least the speed on the sign,,Road Signs,WEA
+"IF (self, isA, speed), THEN (distance, isA, metres)",if you are travelling at high speed a sufcient distance may be several hundred metres,,Vehicle Behavior,WEA
+"IF (line, isA, t), THEN (Broken, indicates, pass)",broken yellow line a broken yellow line indicates you may pass if the broken line is nex t to your driving lane,"IF(self, is, driving) THEN (Broken line, indicates, pass)",Road Signs,CA
+"IF (lane, with, lines), THEN OR((self, isA, freeway), (lane, end, end))",if you are driving in a lane marked with broken lines be prepared to exit the freeway or for the lane to end,"IF (lane, with, lines), THEN OR((self, exit, freeway), (self, exit , lane))",Road Signs,CA
+"IF (self, isA, limit), THEN (stop, before, crosswalk)",if there is no limit line stop before you enter the crosswalk,"IF NOT (crosswalk, has, limit line), THEN (stop, before, crosswalk)",Road Signs,CA
+"IF (self, isA, crosswalk), THEN (stop, before, i)",if there is no crosswalk stop before you enter the i nter se ctio n,"IF NOT(self, isA, crosswalk), THEN (stop, before, intersection)",Road Signs,CA
+"IF (self, isA, arrow), THEN NOT(Turn, r, Red)",right turn agains t a red arrow you may not turn right if you are stopped at a red arrow light,"IF (self, isA, arrowlight), THEN NOT(Turn, right, onred)",Road Signs,CA
+"IF (right, isA, allowed), THEN (self, isA, sign)",if free right turns are not allowed there will be a sign saying so,"IF NOT (right turn, isA, allowed), THEN (self, isA, sign)",Road Signs,CA
+"IF AND((wheels, isA, left), (vehicle, from, behind)), THEN (self, isA, trac)",if your wheels are pointed to the left and a vehicle hits you from behind you could be pushed into oncoming trac,"IF AND((wheels, isA, left), (vehicle, hits from, behind)), THEN (self, isA, pushed traffic)",Safety Hazards,CA
+"IF (self, hasA, light), THEN (t, across, intersection)",even if you have a green light do not star t going across the intersection if there are vehicles blocking your way,"IF AND (self, hasA, light) (vehicles, in, intersection), NOT THEN (go, across, intersection)",Vehicle Behavior,CA
+"IF (driver, isA, left), THEN (pass, on, left)",never pass on the left if the driver is signaling a left turn,"IF (driver, signaling, left), THEN NOT (pass, on, left)",Vehicle Behavior,CA
+"IF (stop, if, )), THEN (self, see, signal)",when you see a yellow trac signal light stop if you can do so safely,"IF (self, see, yellow traffic signal )), THEN (self, stop, signal)",Road Signs,CA
+"IF NOT(self, get, signal), THEN NOT(Do, enter, intersection)",do not enter the intersection if you can not get completely across before the trac signal light turns red,"IF NOT(self, pass, signal), THEN NOT(Do, enter, intersection)",Road Signs,CA
+"IF (intersection, by, STOP), THEN (Traffic, as, as)",traffic signal light not working blackout stop as if the intersection is controlled by stop signs in all directions,"IF (intersection, lights, not working), THEN (Traffic, as, stop sign)",Road Signs,CA
+"IF (Dont, isA, ashing), THEN (Drivers, yield, pedestrians)",drivers must yield to pedestrians even if the dont walk light is ashing,"IF (Don’twalk, isA, flashing), THEN (Drivers, yield, pedestrians)",Vehicle Behavior,CA
+"IF NOT(self, see, truck), THEN NOT(truck, see, you)",if you can not see the truck s side mirrors the truck driver can not see you,"IF NOT(self, see, truck mirrors), THEN NOT(truck, see, you)",Vehicle Behavior,CA
+"IF (shares, with, tr), THEN (distance, from, rail)",maintain a safe distance from the light rail vehicle if it shares the road with other tr ac,"IF (self, shares with, rail), THEN (distance, from, rail vehicle)",Vehicle Behavior,CA
+"IF (self, isA, intersection), THEN (continue, through, intersection)",if you are in an intersection when you see an emergency vehicle continue through the intersection,"IF AND((self, isA, intersection),(self, see, emergency vehicle)) THEN (continue, through, intersection)",Vehicle Behavior,CA
+"IF (self, choose, trac), THEN NOT(self, do, lane)",if you choose to drive slower than other trac do not drive in the fast lane,"IF (self, choose, slow), THEN NOT(self, do, left lane)",Vehicle Behavior,CA
+"IF (self, need, tracks), THEN (wait, until, tracks)",if you need to stop after crossing the tracks wait until you can completely cross the tracks before proceeding,"IF (self, need, pass tracks), THEN (wait, until can pass, tracks completely)",Vehicle Behavior,CA
+"IF (self, isA, tracks), THEN (self, risk, y)",if you are on the tracks you risk injur y o r d eath,"IF (self, isA, tracks), THEN (self, risk, death)",Vehicle Behavior,CA
+"IF (vehicle, in, front), THEN (foot, off, gas)",if a vehicle merges in front of you too closely take your foot o the gas,"IF (vehicle merges, in, front), THEN (foot, off, gas)",Safety Hazards,CA
+"IF (ts, on, day), THEN (pavement, for, minutes)",if it star ts to rain on a hot day the pavement can be ver y slipper y for the rst several minutes,"IF AND ((hot, on, day), (rain, on day)), THEN (pavement, slippery , for minutes)",Environmental Conditions,CA
+"IF NOT(self, see, feet), THEN (self, isA, mph)",if you can not see far ther than feet it is not safe to drive faster than mph,"IF NOT(self, see, more 100feet), THEN NOT (self, drive, faster 30mph)",Environmental Conditions,CA
+"IF (self, drive, y), THEN (carr, for, tires)",if you drive in snow y areas carr y snow chains for your tires,"IF (self, drive, snow), THEN (self, carry, tires chains)",Environmental Conditions,CA
+"IF (water, isA, deep), THEN (road, isA, cross)",if the water is deep the road may be too dangerous to cross,"IF (water, isA, deep), THEN (road, isA, dangerous)",Environmental Conditions,CA
+"IF (fog, becomes, safely), THEN (self, consider, road)",if the fog becomes too thick to drive safely consider pulling o the road,"IF (fog, becomes, thick), THEN (self, pull off, road)",Environmental Conditions,CA
+"IF AND((self, isA, y), NOT(self, control, vehicle)), THEN (way, stop, skid)",if you are skidding on a slipper y sur face and can not control your vehicle nd a way to stop the skid,"IF AND((self, isA, slippery), NOT(self, control, vehicle)), THEN (way, stop, skid)",Safety Hazards,CA
+"IF (brakes, get, wet), THEN AND((self, dr, gas), (brake, at, time))",if your brakes get wet you can dr y them by lightly pressing the gas and brake pedals at the same time,"IF (brakes, get, wet), THEN AND((self, press, gas), (self, press, brake))",Safety Hazards,CA
+"IF (anyone, isA, injured), THEN NOT(self, get, vehicles)",if anyone is injured they will get help faster if other vehicles are not blocking the road,"IF (anyone, isA, injured), THEN NOT(self, get, blocking vehicles)",Safety Hazards,CA
+"IF (one, isA, t), THEN (vehicle, out, trac)",move your vehicle out of trac if no one is hur t,"IF (one, isA,hurt), THEN (vehicle, out, traffic)",Safety Hazards,CA
+"IF (batter, isA, dead), THEN (Jump, t, vehicle)",jump star t your vehicle if the batter y is dead,"IF (battery, isA, dead), THEN (Jump, start, vehicle)",Safety Hazards,CA
+"IF (self, make, call), THEN (Pull, o, road)",pull o the road if you must make a call,"IF (self, make, call), THEN (Pull, off, road)",Vehicle Behavior,CA
+"IF (Railroad, approaching, railroad), THEN AND((stop, between, 15), (feet, from, rail))",railroad grade crossings when approaching a railroad grade crossing stop between and feet from the nearest rail if,"IF (self, approaching, railroad), THEN AND((stop, between, 15feet), (50feet, from, rail))",Vehicle Behavior,TX
+"IF (car, off, tracks), THEN (self, get, help)",if you can not push the car off the tracks get help,"IF NOT(car, off, tracks), THEN (self, get, help)",Safety Hazards,TX
+"IF (self, isA, control), THEN (right-of-way, on, light)",if there is not a pedestrian control signal give the pedestrian the rigth-of-way on a green light,"IF NOT (self, is A, controlsign), THEN (pedestrian right-of-way, on, light)",Vehicle Behavior,TX
+"IF (light, after, pedestrian), THEN (self, give, right-of-way)",if the light changes after the pedestrian has entered the crosswalk still give the pedestrian the,"IF (lightchanges, after, pedestrian), THEN (self, give, right-of-way)",Road Signs,TX
+"IF (self, turn, streets), THEN (self, prohibited, law)",you may also turn left if both streets are one way unless prohibited by law,"IF  NOT(self, prohibited, law)  THEN (self, one way, turn left)",Vehicle Behavior,TX
+"IF (stop, isA, safely), THEN (intersection, before, changes)",if a stop can not be made safely then you may proceed cautiously through the intersection before the light changes to red,"IF NOT (stop, isA, safely), THEN (intersection, before, yellowchanges)",Road Signs,TX
+"IF (load, than, figure), THEN NOT(Do, try, enter)",do not try to enter if your load is higher than the figure shown on the sign,"IF (load, greaterthan, figure), THEN NOT(Do, try, enter)",Road Signs,TX
+"IF (vehicles, on, road), THEN (Stay, in, right-hand)",stay in the lane if you are slower than other vehicles on the road,"IF (self, slow, onroad), THEN (Stay, in, right-hand)",Vehicle Behavior,TX
+"IF (vehicles, at, time), THEN (yield, on, right)",if two vehicles arrive at the same time yield to the vehicle on your right,"IF (vehicles, at, sametime), THEN (yield, on, right)",Vehicle Behavior,TX
+"IF (track, isA, crossed), THEN (sign, of, tracks)",if more than one track is to be crossed the sign will show the number of tracks,"IF (track, isA, crossed), THEN (sign, show, number tracks)",Road Signs,TX
+"IF OR((self, isA, traffic), (self, passing, vehicles)), THEN OR((self, Use, middle), (self, left, lane))",use the middle or left lane if you are traveling faster than other traffic or passing other vehicles,"IF OR((self, isfaster, traffic), (self, passing, vehicles)), THEN OR((self, Use, middle), (self, left, lane))",Vehicle Behavior,TX
+"IF (self, plan, freeway), THEN (change, as, possible)",if you plan to leave the freeway soon change to the exit lane as soon as possible,"IF (self, plan leave, freeway), THEN (change, as, possible)",Vehicle Behavior,TX
+"IF NOT(self, do, lights), THEN (self, use, taillights)",if you do not have warning lights use your taillights,"IF NOT(self, have, warninglights), THEN (self, use, taillights)",Safety Hazards,TX
+"IF (youre, driving, miles), THEN AND((self, Keep, windows), (ice, before, drive))",keep windows clear remove snow and ice before you drive even if youre just driving a few miles,"IF (self, driving, few miles), THEN AND((self, clear, windows), (ice, before, drive))",Environmental Conditions,TX
+"IF (self, pass, truck), THEN (crash, because, trucks)",if you pass too closely behind the truck a crash may occur because you are in the trucks blind spot,"IF (self, pass, behind truck), THEN (crash, because, blind spot)",Safety Hazards,TX
+"IF AND((road, for, U-turn), (self, cant, block)), THEN (self, Use, -point)",use a three turn only if the road is too narrow for a and you cant go around the block,"IF AND((road narrow, for, U-turn), (self, cant, around block)), THEN (self, Use, 3-point turn)",Vehicle Behavior,FL
+"IF (vehicles, at, time), THEN (driver, on, right)",if vehicles arrive at approximately the same time each driver must yield to the drivers on their right,"IF (vehicles, at, time), THEN (driver,yield,right)",Vehicle Behavior,FL
+"IF (reflectors, on, lane), THEN (side, of, road)",if you see red reflectors facing you on the lane lines you are on the wrong side of the road,"IF (red reflectors, on, lane), THEN (wrongside, of, road)",Road Signs,FL
+"IF (self, pass, exit), THEN (self, go, o)",if you pass your exit you must go to the next o n e,"IF (self, pass, exit), THEN (self, go, nextone)",Vehicle Behavior,FL
+"IF OR((visibility, isA, fog), (moisture, on, windshield)), THEN (self, isA, diicult)",sometimes it is diicult to determine if poor visibility is due to fog or moisture on the windshield,"IF OR((visibility, isA, fog), (moisture, on, windshield)), THEN (self, vision, difficult)",Environmental Conditions,FL
+"IF (vehicles, behind, you), THEN (self, brake, wheels)",if there are no vehicles close behind you brake hard without locking your wheels,"IF NOT(vehicles, behind, you), THEN (self, brake, wheels)",Safety Hazards,FL
+"IF (collision, isA, inevitable), THEN NOT(self, do, ve)",if collision is inevitable do not swer ve to avoid the animal,"IF (collision, isA, inevitable), THEN NOT(self, swerve, to animal)",Safety Hazards,FL
+"IF (crash, isA, unavoidable), THEN (ve, o, road)",if a crash is unavoidable it is better to swer ve o the road than into oncoming traic,"IF (crash, isA, unavoidable), THEN (swerve, on, road)",Safety Hazards,FL
+"IF (self, do, ABS), THEN AND((self, pump, brake), (self, hasA, ABS))",if you do not have abs pump the brake pedal hard and fast if you have abs skip to,"IF NOT (self, have, ABS), THEN (self, pump, brake fast)",Safety Hazards,FL
+"IF (self, shut, engine), THEN (self, lose, ability)",if you shut o your engine you will lose the ability to steer the car,"IF (self, shut, engine), THEN (self, lose, steering ability)",Safety Hazards,FL
+"IF (vehicles, at, time), THEN (driver, on, yields)",if multiple vehicles arrive at the same time the driver on the le yields to the driver on the right,"IF (vehicles, at, same time), THEN (driver, on, yieldsright)",Vehicle Behavior,FL
+"IF (trac, at, light), THEN (example, stop, stop)",if a trac ocer signals you to stop at a green light for example you must stop,"IF (traffic officer, at, light), THEN (self, must, stop)",Environmental Conditions,NY
+"IF (vehicle, from, behind), THEN (wheels, into, trac)",keep your wheels straight to prevent being pushed into oncoming trac if your vehicle is hit from behind,"IF (vehicle, waiting, intersection), THEN (wheels, keep, straight)",Vehicle Behavior,NY
+"IF (self, hasA, concern), THEN (wait, for, trac)",if you have any concern wait for trac to pass before you turn left,"IF (self, hasA, concern), THEN (wait, for, traffic)",Vehicle Behavior,NY
+"IF (road, enter, lanes), THEN (self, turn, lane)",if the road you enter has two lanes you must turn into its left lane,"IF (road, enter, twolanes), THEN (self, turn, leftlane)",Road Signs,NY
+"IF AND((lane, isA, wide), (motorcycle, isA, side)), THEN (move, into, lane)",never move into the same lane space as a motorcycle even if the lane is wide and the motorcycle is to one side,"IF AND((lane, isA, wide), (motorcycle, isA, side)), THEN NOT (move, into, lane)",Environmental Conditions,NY
+"IF (vehicle, on, left), THEN (lane, hasA, yellow)",you can not pass a vehicle on the left if your lane has a solid yellow center line,"IF  (lane, has A,  solid yellow line), THEN NOT (self, pass, vehicle on left)",Road Signs,NY
+"IF (vehicle, in, blind), THEN NOT(self, see, mirrors)",if a vehicle is in the blind spot you may not see it in your mirrors,"IF (vehicle, in, blind spot), THEN NOT(self, see, mirrors)",Vehicle Behavior,NY
+"IF (BEING, If, vehicle), THEN AND((self, decrease, speed), (stay, in, lane))",being passed if another vehicle passes you on the left decrease your speed slightly and stay centered in your lane,"IF (BEING, pass, vehicle), THEN AND((self, decrease, speed), (stay, in, lane))",Vehicle Behavior,NY
+"IF (side, of, highway), THEN (self, stop, school)",you must stop for a school bus even if it is on the opposite side of a divided highway,"IF (side, of, highway), THEN (self, stop, schoolbus)",Vehicle Behavior,NY
+"IF (driver, in, crash), THEN (distance, from, crash)",if an aggressive driver is involved in a crash stop a safe distance from the crash scene,"IF (driver, in, crash), THEN (safedistance, from, crash)",Safety Hazards,NY
+"IF (limit, isA, posted), THEN (drive, than, mph)",if no limit is posted drive no more than mph,"IF NOT(limit, isA, posted), THEN (drive, max, 55 mph)",Road Signs,NY
+"IF (self, know, work), THEN (self, try, dierent)",if you know where a work zone is ahead you should try to use a dierent route,"IF (self, know, workzone), THEN (self, try, different route)",Safety Hazards,NY
+"IF NOT(self, do, train), THEN (self, Get, tracks)",get away from the tracks even if you do not see a train,"IF NOT(self, see, train), THEN (self, Get, offtracks)",Vehicle Behavior,NY
+"IF (vehicle, begins, traction), THEN (self, decrease, speed)",if your vehicle begins to lose traction decrease your speed even more,"IF (vehicle, begins, losetraction), THEN (self, decrease, speed)",Safety Hazards,NY
+"IF (rear, start, skid), THEN (wheel, in, direction)",if your rear wheels start to skid turn the steering wheel in the direction the vehicle is trying to go,"IF (rear, start, skid), THEN (wheel, in, vehicledirection)",Safety Hazards,NY
+"IF (rear, left, left), THEN (steer, left, left)",if your rear wheels slide left steer left,"IF (rear wheels, slide left, left), THEN (steer, left, left)",Safety Hazards,NY
+"IF (self, brake, brakes), THEN (self, make, situation)",if you brake hard with regular brakes it will make the situation worse,"IF (self, brake, regularbrakes), THEN (self, make, situationworse)",Safety Hazards,NY
+"IF (self, shift, gear), THEN (self, help, vehicle)",if you shift to a lower gear it will help your vehicle decrease speed,"IF (self, shift, gear), THEN (self, decrease speed, vehicle)",Safety Hazards,NY
+"IF (vehicle, hasA, power), THEN (self, check, level)",if your vehicle has power steering check the uid level periodi cally,"IF (vehicle, hasA, powerteering), THEN (self, check, level periodically)",Vehicle Behavior,NY
+"IF (driver, over, over), THEN (try, if, possible)",if the other driver does not move over try to escape to the right if possible,"IF (driver, coming, head on), THEN (try, going, right)",Safety Hazards,PN
+"IF (vehicle, so, others), THEN (self, Turn, beam)",turn on your low beam headlights and fog lights if your vehicle has them so others can see you,"IF (self, driving, fog), THEN (self, Turn, beam lights)",Environmental Conditions,PN
+"IF (self, isA, mph), THEN (feet, before, turning)",if you are driving mph or more you must signal at least feet before turning,"IF (self, isA, 35 mph), THEN ( signal300ft, before, turning)",Vehicle Behavior,PN
+"IF (vehicle, on, highway), THEN (self, need, road)",if your vehicle breaks down on the highway you will need to pull off of the road,"IF (self, breakson, highway), THEN (self, pull, offroad)",Safety Hazards,PN
+"IF NOT(self, want, lane), THEN (wait, until, turn)",if you want to change to another lane wait until after you have safely completed your turn,"IF (self, want, lanechange), THEN (wait, until, completeturn)",Vehicle Behavior,PN
+"IF (light, if, traffic), THEN (TURNING, see, sign)",turning right at a red light unless you see this sign you may turn right at a red light if traffic is clear,"IF AND(NOT(light, turn, right turn),(traffic, is,clear)), THEN (self, turn, right)",Vehicle Behavior,PN
+"IF (self, hasA, light), THEN (intersection, if, vehicles)",even if you have a green light do not enter an intersection if there are vehicles blocking your way,"IF (self, hasA, green light), THEN NOT(intersection, if, vehiclesblocking)",Vehicle Behavior,PN
+"IF NOT(self, facing, caution), THEN (self, watching, turns)",if facing one another both can proceed with caution watching for possible turns,"IF (self, facing vehicle, intersection), THEN (self, go, watching turns)",Vehicle Behavior,PN
+"IF (self, isA, center), THEN OR((self, either, turn), (self, go, intersection))",if you are in the center lane you may either turn left or go straight through the intersection,"IF (self, isA, centerlane), THEN OR((self, either, turnleft), (self, go, intersection))",Vehicle Behavior,PN
+"IF AND((line, on, right), (line, on, left)), THEN (self, isA, direction)",if you see a white line on your right and a yellow line on the left you are headed in the right direction,"IF AND((white line, on, right), (yellow line, on, left)), THEN (self, is, right direction)",Road Signs,PN
+"IF (self, isA, driver), THEN (self, yield, exiting)",if you are the driver entering the highway you must yield to the exiting driver,"IF (self, isA, entering), THEN (self, yield, exiting)",Vehicle Behavior,PN
+"IF (self, isA, truck), THEN (self, stay, No-Zone)",if you are following a truck stay out of its,"IF (self, following, truck), THEN (self, out, No-Zone)",Vehicle Behavior,PN
+"IF (rear, of, vehicle), THEN (self, turn, wheel)",if the rear of your vehicle is skidding to the left turn the wheel to the left,"IF (self, rear, skid left), THEN (self, turn, wheel left)",Safety Hazards,PN
+"IF (rear, of, vehicle), THEN (self, turn, wheel)",if the rear of your vehicle is skidding to the right turn the wheel to the right,"IF (self, rear, skid right, THEN (self, turn, wheel right)",Safety Hazards,PN
+"IF (water, on, road), THEN NOT(thing, do, route)",if there is moving water on the road the safest thing to do is find another route,"IF (water, on, road), THEN NOT(continue, do, route)",Safety Hazards,PN
+"IF NOT(self, pumping, brake), THEN (self, Use, parking)",use the parking emergency brake if pumping the brake pedal does not work,"IF NOT(self, pumping, brake), THEN (self, Use, parking break)",Safety Hazards,PN
+"IF (self, isA, track), THEN (sign, below, crossbuck)",if there is more than one track a sign below the crossbuck indicates the number of tracks at the crossing,"IF (self, ismore, track), THEN (sign, below, crossbuck)",Road Signs,OH
+"IF (self, isA, track), THEN (tracks, before, crossing)",if there is more than one track make sure all tracks are clear before crossing,"IF (self, isA, track), THEN (cleartracks, before, crossing)",Vehicle Behavior,OH
+"IF (self, hasA, tracks), THEN (self, keep, train)",once you have started to cross the tracks keep going especially if you see a train approaching,"IF (self, in, tracks), THEN (self, keep, going)",Vehicle Behavior,OH
+"IF (vehicle, hasA, transmission), THEN (self, shift, tracks)",if your vehicle has a manual transmission shift down before reaching the tracks,"IF (vehicle, hasA, transmission), THEN (self, shift-down, tracks)",Vehicle Behavior,OH
+"IF (car, per, hour), THEN (traffic, as, fast)",if your car is moving 30 miles per hour it will be nearly impossible to merge with traffic moving almost twice as fast,"IF (self, moving, 30mpg), THEN NOT (self, able, merge)",Vehicle Behavior,OH
+"IF (self, miss, exit), THEN (self, take, one)",if you miss your exit take the next one,"IF (self, miss, exit), THEN (self, take, nextone)",Vehicle Behavior,OH
+"IF (lane, isA, possible), THEN AND((self, reduce, speed), (proceed, with, caution))",if a lane change is not possible reduce speed and proceed with caution,"IF NOT(lanechange, isA, possible), THEN AND((self, reduce, speed), (proceed, with, caution))",Vehicle Behavior,IL
+"IF (intersection, with, traffic), THEN (remain, until, emergency)",if stopped at an intersection with two-way traffic remain stopped until the emergency vehicle passes through the intersection,"IF AND(self, in, two-way intersection)(emergency vehicle, coming, through), THEN (remain, stop, emergency vehicle passes)",Vehicle Behavior,IL
+"IF (self, isA, line), THEN (stop, before, crosswalk)",if there is no stop line stop before the crosswalk,"IF NOT (stop, isA, line), THEN (stop, before, crosswalk)",Road Signs,IL
+"IF (area, isA, clear), THEN AND((self, give, signal), (self, move, left))",if the area is clear give the signal and carefully move into the left lane,"IF (left tarea, isA, clear), THEN AND((self, give, signal), (self, move, left))",Vehicle Behavior,IL
+"IF (area, isA, clear), THEN AND((self, give, signal), (self, move, lane))",if the area is clear give the signal and carefully move into the right lane,"IF (right area, isA, clear), THEN AND((self, give, signal), (self, move, lane))",Vehicle Behavior,IL
+"IF (self, isA, room), THEN NOT(self, do, tracks)",if there is not enough room do not cross the tracks,"IF NOT(self, isA, room), THEN NOT(self, cross, tracks)",Vehicle Behavior,IL
+"IF (vehicle, hasA, transmission), THEN (self, shift, tracks)",if a vehicle has a manual transmission shift down before reaching the tracks,"IF (vehicle, hasA, manual transmission), THEN (self, shift down, before tracks)",Vehicle Behavior,IL
+"IF (self, isA, sidewalk), THEN OR((stop, at, point), (roadway, of, traffic))",if there is no sidewalk stop at a point nearest the street or roadway where there is a view of approaching traffic,"IF NOT (self, isA, sidewalk), THEN OR((stop, at, point), (roadway, of, traffic))",Road Signs,IL
+"IF AND((self, park, uphill), (self, isA, curb)), THEN (front, from, curb)",if you park facing uphill and there is a curb turn the front wheels away from the curb,"IF AND((self, park, uphill), (self, isA, curb)), THEN (frontwheels, awayfrom, curb)",Vehicle Behavior,IL
+"IF (feet, of, space), THEN (drivers, until, safely)",if there is not 3 feet of passing space drivers must wait to pass until they can do so safely,"IF NOT(3 feet, of, space cyclist), THEN (drivers, wait until, safely pass)",Vehicle Behavior,IL
+"IF (self, isA, line), THEN (stop, before, cross-)",if there is no stop line stop before entering the cross-walk,"IF NOT(self, isA, line), THEN (stop, before, cross-walk)",Road Signs,IL
+"IF (self, isA, crosswalk), THEN (stop, before, intersection)",if there is no crosswalk stop before entering the intersection,"IF NOT(self, isA, crosswalk), THEN (stop, before, intersection)",Road Signs,IL
+"IF (sign, shows, children), THEN (school, near, near)",if the sign shows two children walking a school is near,"IF (sign, shows, children), THEN (school, is, near)",Road Signs,IL
+"IF (self, isA, line), THEN (stop, before, cross-)",if there is no stop line stop before entering the walk,"IF NOT (self, isA, line), THEN (stop, before, cross-walk)",Road Signs,IL
+"IF (self, isA, crosswalk), THEN (stop, before, intersection)",if there is no crosswalk stop before entering the intersection,"IF NOT (self, isA, crosswalk), THEN (stop, before, intersection)",Road Signs,IL
+"IF (self, isA, stop), THEN (stop, before, crosswalk)",if there is not a marked stop line stop before entering the crosswalk,"IF NOT(self, isA, stopline), THEN (stop, before, crosswalk)",Road Signs,IL
+"IF (self, isA, crosswalk), THEN (stop, before, intersection)",if there is no crosswalk stop before ing the intersection,"IF NOT (self, isA, crosswalk), THEN (stop, before, intersection)",Road Signs,IL
+"IF (intersection, while, light), THEN (turn, though, turns)",if you enter an intersection while the light is green you may finish the turn even though the light turns red,"IF AND ((self, enter, intersection),(light, is, green)) THEN (self, finish, turn)",Road Signs,IL
+"IF (end, of, vehicle), THEN (motorist, off, gas)",if the rear end of the vehicle starts to slide a motorist should take foot off the gas pedal,"IF (self, rear, slide), THEN (motorist, off, gas)",Safety Hazards,NJ
+"IF (steering, from, direction), THEN (vehicle, spin, spin)",a vehicle may spin if the steering wheel is quickly turned away from the direction of the skid,"IF (steering, away from, skid direction), THEN (vehicle, may, spin)",Safety Hazards,NJ
+"IF (help, isA, needed), THEN OR((self, Tie, handkerchief), (door, as, signal))",tie a white handkerchief to the antenna or left door handle as a signal if help is needed,"IF (help, isA, needed), THEN OR((self, Tie, handkerchief), (door, as, signal))",Safety Hazards,NJ
+"IF (GAS, If, gas), THEN (motorist, on, road)",gas pedal problems if a gas pedal sticks the motorist should keep eyes on the road while quickly shifting to neutral,"IF (GAS, pedal, sicks), THEN (self, shift, neutral)",Safety Hazards,NJ
+"IF (self, miss, exit), THEN (self, go, one)",if you miss an exit go on to the next one,"IF (self, miss, exit), THEN (self, go, nextone)",Vehicle behavior,NJ
+"IF (changes, while, driver), THEN (he/, through, caution)",if the light changes while a driver is already in the intersection she should go through with caution,"IF (lightchanges, while, intersection), THEN (he/she, through, caution)",Road Signs,NJ
+"IF (devices, while, motorist), THEN (he/she, proceed, side)",if warning devices activate while a motorist is crossing railroad tracks should immediately proceed to the other side,"IF (warning, while,crossing tracks), THEN (he/she, proceed, other side)",Road Signs,NJ
+"IF (self, isA, night), THEN (turn, on, dome)",if you are stopped at night turn on your dome interiorlights,"IF (self, isstoped, night), THEN (turn, on, domeinteriorlights)",Vehicle behavior,NJ
+"IF (motorist, pull, road), THEN (he/she, on, vehicles)",if a motorist must pull off the road should always turn on the vehicles emergency flashers hazard lights,"IF (motorist, pull, road), THEN (he/she, on, hazardlights)",Vehicle behavior,NJ
+"IF OR((change, in, road), (turn, if, vehicle)), THEN (gust, of, wind)",a gust of wind a change in road level or a slight turn can create a skid if a vehicle is hydroplaning,"IF OR((change, in, road level), (gust, of, wind)), THEN (self, is, skid)",Safety Hazards,NJ
+"IF (wheels, spin, spin), THEN (gear, isA, used)",if the wheels spin a lower gear should be used,"IF (wheels, spin, spin), THEN (lowergear, isA, used)",Safety Hazards,NJ
+"IF (self, isA, traffic signal), THEN (self, isA, traffic)",if there are no traffic signals there is no traffic control,"IF NOT(self, isA, traffic signal), THEN NOT(self, isA, trafficControl)",Road Signs,NJ
+"IF (vehicle, isA, fast), THEN (motorist, in, time)",if a vehicle is moving too fast the motorist may not be able to slow down in time,"IF (vehicle, isA, fast), THEN NOT (motoristslow, in, time)",Vehicle behavior,NJ
+"IF (motorist, encounters, animal), THEN (he/she, until, animal)",if a motorist encounters an animal should slow down until the animal has passed,"IF (motorist, encounters, animal), THEN (he/sheslow, until, animalpassed)",Safety Hazards,NJ
+"IF (HOOD, If, vehicles), THEN (motorist, slow, immediately)",hood latch failure if the vehicles hood suddenly flies up the motorist should slow down immediately,"IF (HOOD, flies, up), THEN (motorist, slow, immediately)",Safety Hazards,NJ
+"IF (crash, looks, possible), THEN (motorist, from, traffic)",if a crash looks possible the motorist should turn away from oncoming traffic even if it means leaving the road,"IF (crash, looks, possible), THEN (motorist, awayfrom, traffic)",Safety Hazards,NJ
+"IF (self, hitting, something), THEN (try, make, blow)",if hitting something is unavoidable try to make it a glancing blow,"IF (self, hitting, something), THEN (try, make, glancingblow)",Safety Hazards,NJ
+"IF (vehicle, than, sign), THEN NOT(Do, proceed, proceed)",do not proceed if your vehicle is taller than the height shown on the sign,"IF (vehicle, tallerthan, height), THEN NOT(Do, proceed, proceed)",Road Signs,VG
+"IF (self, isA, track), THEN (trains, from, direction)",if there is more than one track trains may be approaching from either direction on either track,"IF (self, ismore, tracks), THEN (trains, fromeither, direction)",Vehicle Behavior,VG
+"IF (self, turning, light), THEN AND((drivers, signal, signal), (yield, on, right))",if turning right on a green light drivers must signal and yield to bicycles on the right,"IF (self, turning, greenlight), THEN AND((drivers, signal, signal), (yield, bicycleson, right))",Vehicle Behavior,VG
+"IF (self, hasA, transponder), THEN AND((toll, for, for), (signs, with, E-ZPass))",if you have a transponder as you approach a toll plaza look for and follow signs with the purple logo,"IF (self, hasA, transponder), THEN AND((look, for, toll), (signs, with, E-ZPass))",Road Signs,VG
+"IF NOT(self, do, transponder), THEN AND((toll, for, for), (signs, for, cash))",if you do not have a transponder as you approach a toll plaza look for and follow signs for cash only lanes,"IF NOT(self, do, transponder), THEN AND((look, for, toll), (signs, for, cash))",Road Signs,VG
+"IF OR((bus, isA, loading), AND((self, unloading, passengers), (signals, on, on))), THEN (↨You, stop, stop)",must also stop if the bus is loading or unloading passengers and the signals are not on,"IF OR((schoolbus, isA, loading), AND((schoolbus, unloading, passengers), (signals, on, on))), THEN (You, stop, stop)",Vehicle Behavior,VG
+"IF (self, isA, lanes), THEN AND((self, reduce, speed), (proceed, with, caution))",if you are unable to safely change lanes reduce your speed and proceed with caution,"IF (self, change, lanes), THEN AND((self, reduce, speed), (proceed, with, caution))",Vehicle Behavior,VG
+"IF (flow, of, traffic), THEN (self, Yielding, Yield)",yielding the yield also means to stop if you can not merge safely into the flow of traffic,"IF NOT(mergeflow, of, traffic), THEN (self, Yielding, Yield)",Road Signs,VG
+"IF (lane, for, clearance), THEN (motorist, change, lanes)",if the lane is not wide enough to allow for a clearance the motorist must change lanes,"IF NOT(lane, wide, three-footclearance), THEN (motorist, change, lanes)",Vehicle Behavior,VG
+"IF (self, park, shoulder), THEN (pull, over, shoulder)",if you park on a shoulder pull over as far on the shoulder as possible,"IF (self, park, shoulder), THEN (pull, over, farshoulder)",Vehicle Behavior,VG
+"IF (self, see, driver), THEN (self, stay, way)",if you see an aggressive driver stay out of the way,"IF (self, see, agresivedriver), THEN (self, stay, away)",Vehicle Behavior,VG
+"IF (self, isA, danger), THEN (tap, on, horn)",if there is no immediate danger a light tap on the horn should be all you need,"IF NOT(self, isA, danger), THEN (tap, on, horn)",Safety Hazards,WA
+"IF (self, isA, danger), THEN (blast, on, horn)",if there is danger do not be afraid to sound a sharp blast on your horn,"IF (self, isA, danger), THEN (blast, on, horn)",Safety Hazards,WA
+"IF (self, starts, day), THEN (pavement, isA, surface)",if it starts to rain on a hot day pavement can be very slippery for the first few minutes asphalt to come to the surface,"IF AND(day, starts, raining),(day, is, hot), THEN (pavement, isA, slippery)",Environmental Conditions,WA
+"IF (self, isA, lane), THEN (wait, until, road)",if there is no right lane wait until the road ahead is clear then reduce speed slowly,"IF (vehicle, tailgating, self),NOT(self, move, right lane), THEN (self, reduce, speed)",Vehicle Behavior,WA
+"IF (self, isA, one), THEN (move, over, lane)",if there is no one next to you move over a lane,"IF ((self, is, multiple lanes),(vehicle, is, entering)), THEN (move, over, lane)",Vehicle Behavior,WA
+"IF (self, want, lanes), THEN (self, take, time)",if you want to move over several lanes take them one at a time,"IF (self, want move, several lanes), THEN (self, move, one-at-a-time)",Vehicle Behavior,WA
+"IF (self, hasA, light), THEN (intersection, if, vehicles)",even if you have a green light do not start across an intersection if there are vehicles blocking your way,"IF AND((self, hasA, green light),(vehicles,in,intersection)), THEN NOT(self, go through, intersection)",Vehicle Behavior,WA
+"IF OR((view, by, curve), (hill, in, roadway)), THEN (Assume, out, sight)",assume there is an oncoming vehicle out of sight if your view is blocked by a curve or a hill in the roadway,"IF OR((view blocked, by, curve), (hill, in, roadway)), THEN (Assume, vehicle, out sight)",Vehicle Behavior,WA
+"IF (self, isA, railroad), THEN NOT(Railroad, grade, Do)",railroad grade crossing do not pass if there is a railroad grade crossing ahead,"IF (self, want pass, vehicle)(railroad, is, ahead), THEN NOT(self, pass, vehicle)",Vehicle Behavior,WA
+"IF (Freeway, If, assistance), THEN (pull, over, shoulder)",stopping on the freeway if you need assistance pull over onto the right shoulder as far as possible,"IF (Freeway, need, assistance), THEN (pull, over, shoulder)",Safety Hazards,AZ
+"IF (self, hasA, intersection), THEN (self, come, stop)",if you have not entered the intersection you should come to a safe stop,"IF NOT(self, hasentered, intersection), THEN (self, come, stop)",Vehicle Behavior,AZ
+"IF (roadway, isA, clear), THEN (intersection, in, direction)",you may go through an intersection in the direction indicated by the signal if the roadway is clear,"IF (roadway, isA, clear), THEN (gointersection, in, signaldirection)",Vehicle Behavior,AZ
+"IF (roadway, isA, clear), THEN AND((self, Flashing, Yellow), (proceed, with, caution))",flashing yellow light a flashing yellow light means you should slow down and proceed with caution if the roadway is clear,"IF (roadway, isA, clear), THEN AND((lights, Flashing, Yellow), (proceed, with, caution))",Road Signs,AZ
+"IF (roadway, isA, clear), THEN AND((self, Flashing, Yellow), (turn, with, caution))",flashing yellow arrow a flashing yellow arrow means you should slow down and turn with caution if the roadway is clear,"IF (roadway, isA, clear), THEN AND((lights, Flashing, Yellow), (turn, with, caution))",Road Signs,AZ
+"IF (arm, isA, out), THEN (school, with, lights)",you must stop for any school bus with flashing lights if its arm is out,"IF AND((arm, isA, out), (school, with, lights)), THEN (self, must,stop)",Vehicle Behavior,AZ
+"IF (line, on, side), THEN (self, pass, roadway)",if the broken yellow line is on your side you may pass when the roadway ahead is clear,"IF (broken line, on, side), THEN (self, pass, roadway)",Road Signs,AZ
+"IF (self, find, vehicles), THEN NOT(Do, become, impatient)",do not become impatient if you find yourself behind one of these slow vehicles,"IF (self, behind, slowvehicles), THEN NOT(Do, become, impatient)",Vehicle Behavior,AZ
+"IF (traffic, stops, suddenly), THEN AND((distance, between, you), (vehicles, avoid, crash))",you need to keep enough following distance between you and the vehicles ahead to avoid a crash if the traffic stops suddenly,"IF (traffic, stops, suddenly), THEN AND((enoughdistance, between, you), (vehicles, avoid, crash))",Vehicle Behavior,AZ
+"IF (self, isA, trailer), THEN (wind, cause, vehicle)",if you are pulling a trailer the wind may cause your vehicle to sway,"IF (self, has, trailer), THEN (wind, cause, sway)",Safety Hazards,AZ
+"IF (self, isA, trailer), THEN (currents, cause, vehicle)",if you are pulling a trailer wind currents can cause your vehicle to jackknife,"IF (self, has, trailer), THEN (currents, cause, jackknife)",Safety Hazards,AZ
+"IF (self, encounter, dust), THEN (self, Reduce, speed)",if you encounter a severe dust storm reduce your speed immediately,"IF (self, encounter, duststorm), THEN (self, Reduce, speed)",Environmental Conditions,AZ
+"IF (self, hasA, windshield), THEN (blades, cause, smearing)",the blades may cause smearing if you have a dirty windshield,"IF (self, hasdirty, windshield), THEN (blades, cause, smearing)",Environmental Conditions,AZ
+"IF (wheels, lock, lock), THEN (ease, off, brakes)",if the wheels should lock ease slightly off the brakes but do not release them completely,"IF (wheels, should, lock), THEN (ease, off, brakes)",Safety Hazards,AZ
+"IF NOT(self, pumping, brakes), THEN (self, apply, parking)",if pumping the brakes does not work slowly apply the parking brake,"IF NOT(work, pumping, brakes), THEN (self, apply, parkingslowly)",Safety Hazards,AZ
+"IF (self, isA, lines), THEN (intersection, as, traffic)",if there are no lines you must stop as close to the intersection as needed to see traffic in both directions,"IF NOT(intersection, has, lines), THEN (self, stop, close intersection)",Road Signs,MA
+"IF (self, isA, light), THEN (self, yield, traffic)",if you are turning left on a steady green light you must yield to oncoming traffic,"IF (self, turn left, green light), THEN (self, yield, traffic)",Road Signs,MA
+"IF (track, crosses, road), THEN (number, of, tracks)",if more than one track crosses a road the number of tracks is posted below the crossbuck,"IF (self, crosses, more one track), THEN (crossbuck, number of, tracks)",Road Signs,MA
+"IF (line, isA, you), THEN NOT(self, cross, lines)",if the solid yellow line is closer to you you can not cross the lines,"IF (yellow line, isA, closer), THEN NOT(self, cross, lines)",Road Signs,MA
+"IF (signals, on, vehicle), THEN (hand, on, page)",if the electronic signals on your vehicle are not working you must use the three hand signals shown on the next page,"IF NOT(signals, on, vehicle), THEN (self, use, hand signals)",Vehicle Behavior,MA
+"IF (self, isA, drivers), THEN (drive, through, spot)",if you are in another drivers blind spot safely drive through the blind spot as quickly as you can,"IF (self, isA, drivers blind spot), THEN (drive, through, spot)",Vehicle Behavior,MA
+"IF (NO, isA, posted), THEN NOT(self, make, U-turn)",you can not make a if a no sign is posted,"IF (NO U-turn, isA, posted), THEN NOT(self, make, U-turn)",Road Signs,MA
+"IF (self, travel, lane), THEN AND((stay, with, flow), NOT(self, do, speed))",if you travel in the second lane stay with the flow of traffic and do not drive below the minimum speed limit,"IF (self, travel, second lane), THEN AND((stay, with, flow), NOT(self, do, bellow speed))",Vehicle Behavior,MA
+"IF (driving, as, part), THEN (self, Drive, times)",if driving as part of a funeral procession you must drive carefully at all times,"IF (driving, as, funeral procesion), THEN (self, Drive, carefully)",Vehicle Behavior,MA
+"IF (emergency, from, direction), THEN (side, of, road)",if an emergency vehicle is coming from any direction you must pull as close as possible to the right side of the road,"IF (emergency vehicle, from , direction), THEN (self, pull, right side)",Vehicle Behavior,MA
+"IF (self, isA, highway), THEN (accelerate, in, lane)",if you are on a highway accelerate to a safe speed in the breakdown lane before merging into traffic,"IF (self, isA, highway), THEN (accelerate, in, breakdown lane)",Vehicle Behavior,MA
+"IF NOT(self, slow, vehicle), THEN AND((self, sound, horn), OR((self, flash, lights), (pedestrians, around, you)))",if you can not slow your vehicle sound your horn and flash your lights to warn drivers or pedestrians around you,"IF NOT(self, slow, vehicle), THEN AND((self, sound, horn), (self, flash, lights))",Safety Hazards,MA
+"IF (traffic, isA, slowly), THEN (distance, from, vehicles)",keep a safe distance from other vehicles even if traffic is moving slowly,"IF (traffic, isA, slowly), THEN (keep distance, from, vehicles)",Vehicle Behavior,MA
+"IF (self, isA, slip), THEN (lef, from, slip)",if there is a slip lane the lef t turn mustbe made from the slip lane,"IF (self, isA, sliplane), THEN (leftturn, from, slip)",Road Signs,QL
+"IF (road, with, turn), THEN (self, follow, turn)",if the road is marked with turn lines to show the path to take when turning follow the turn lines,"IF (road, with, turnsigns), THEN (self, follow, turnsigns)",Road Signs,QL
+"IF (arrows, indicate, w), THEN (self, drive, directions)",if the arrows indicate t w o o r more directions you may drive in any of the directions indicated,"IF (arrows, indicate, twodirections), THEN (self, drive, directions)",Road Signs,QL
+"IF (self, continuing, road), THEN (Vehicle, indicate, right)",vehicle must indicate right if the continuing road curves to the lef t,"IF (self, continuingroad, left), THEN (Vehicle, indicate, right)",Vehicle Behavior,QL
+"IF (self, continuing, road), THEN (Vehicle, indicate, lef)",vehicle must indicate lef t if the continuing road curves to the right,"IF (self, continuingroad, right), THEN (Vehicle, indicate, left)",Vehicle Behavior,QL
+"IF (self, turn, intersection), THEN (self, give, way)",if you turn at the intersection you must also give way to pedestrians crossing the roadyou are entering,"IF (self, turn, intersection), THEN (self, giveway,  pedestrians)",Vehicle Behavior,QL
+"IF (self, isA, line), THEN (whereyou, of, intersection)",if there is nostop line you should stop whereyou have a clearview of the intersection before entering it,"IF NOT (self, isA, line), THEN (stop, clearview of, intersection)",Vehicle Behavior,QL
+"IF OR((vehicle, at, pedestrian), (childrens, crossing, crossing)), THEN NOT(self, take, stoppedvehicle)",if a vehicle has stopped to give way at a pedestrian or childrens crossing you must not over take the stoppedvehicle,"IF OR((vehicle, at, pedestrian), (childrens, crossing, crossing)), THEN NOT(self, overtake, stoppedvehicle)",Vehicle Behavior,QL
+"IF (self, isA, slip), THEN (lef, from, slip)",if there is a slip lane the lef t turn must be made from the slip lane,"IF (self, isA, sliplane), THEN (left turn, from, sliplane)",Road Signs,QL
+"IF (people, in, thevehicle), THEN (Transit, in, transit)",transit you can drive in the transit lane if your have at leastthree people in thevehicle,"IF (3 people, in, vehicle), THEN (Transit, in, transitlane)",Road Signs,QL
+"IF (children, around, around), THEN (speed, in, schoolzones)",the speed limit in schoolzones does not apply if there are no children around,"IF NOT (children, around, schoolZone), THEN NOT(speedlimit, in, schoolzones)",Vehicle Behavior,QL
+"IF (self, directed, tunnel), THEN (tunnel, except, emergency)",do not stop in a tunnel except in an emergency or if directed by the tunnel controller,"IF (self, directed, tunnel), THEN NOT (stop, except, emergency)",Vehicle Behavior,QL
+"IF (self, isA, STOP), THEN (view, of, intersection)",if there is no stop line you should stop where you have a clear view of the intersection before entering it,"IF NOT(self, isA, STOP line), THEN (self, stop, view intersection)",Road Signs,QL
+"IF OR((self, isA, fog), (weather, causing, visibility)), THEN (lights, on, on)",you may only drive with fog lights on if you are in fog or hazardous weather conditions causing reduced visibility,"IF OR((self, isA, fog), (weather, causing, no visibility)), THEN (self, fog ligths, on)",Environmental Conditions,QL
+"IF (Towline, If, car), THEN (towline, isA, than4m)",towline if you are towing a car with a towline the towline must not be more long,"IF (self, tow, car), THEN (towline, isA, 4m)",Vehicle Behavior,QL
+"IF (self, isA, traffic light), THEN (wait, until, light)",if there are traffic lights wait until you are facing a green light beforemoving forward,"IF (self, isA, traffic light), THEN (wait, until, green light)",Road Signs,QL
+"IF (self, isA, vehicle), THEN (wait, until, escort)",if you are following an oversize vehicle wait until the rear escort vehicle operator signals you can overtake,"IF (self, following , oversized vehicle), THEN (wait, until, escort signals)",Vehicle Behavior,QL
+"IF (vehicle, on, fuel), THEN NOT(Do, enter, tunnel)",do not enter a tunnel if your vehicle is very low on fuel,"IF (vehicle, low on, fuel), THEN NOT(Do, enter, tunnel)",Vehicle Behavior,QL
+"IF (self, isA, moving), THEN (left, allow, trafc)",if you are driving a slow moving vehicle pull well over to the left to allow following trafc to overtake,"IF (self, isA, movingslow), THEN (moveleft, allow, traffic)",Vehicle Behavior,WEA
+"IF (light, as, ed), THEN (self, YOU, CAN)",if the light is yellow as you approach it you are requir ed to stop if you can do so safely,"IF (light, is, yellow), THEN (self, stop, safetly)",Road Signs,WEA
+"IF (self, isA, Way), THEN (intersection, as, as)",treat the intersection as if you are facing a give way sign,"IF NOT(intersection, sign, working), THEN (intersection, as, give way sign)",Environmental Conditions,WEA
+"IF (part, of, vehicle), THEN NOT(self, merging, way)",during merging you must give way to another vehicle if any part of the other vehicle is ahead of your vehicle,"IF (part, of, vehicle front of you), THEN(self, give, way)",Vehicle Behavior,WEA
+"IF (self, isA, line), THEN (stop, as, intersection)",if there is no line stop as close to the intersection as practicable but before entering it,"IF NOT(self, isA, line), THEN (stop, as, intersection)",Environmental Conditions,WEA
+"IF AND((vehicle, develops, engine), (begins, slow, slow)), THEN (move, as, trafc)",if your vehicle develops engine trouble and begins to slow move to the left as far as possible from trafc,"IF AND((vehicle, developstrouble, engine), (begins, slow, slow)), THEN (move, leftfrom, traffic)",Safety Hazards,WEA
+"IF (self, drive, bicycle), THEN (use, avoid, bicyclists)",if you drive a motorized bicycle use caution to avoid other bicyclists,,,CA
+"IF (self, isA, limit), THEN (stop, before, crosswalk)",if there is no limit line stop before you enter the crosswalk,,,CA
+"IF (self, isA, crosswalk), THEN (stop, before, i)",if there is no crosswalk stop before you enter the i nter se ctio n,,,CA
+"IF (opening, in, center), THEN (self, divided, highway)",on a divided highway only if an opening is provided in the center div id er,,,CA
+"IF (self, drive, vehicle), THEN (self, isA, vehicle)",if you drive a noncommercial vehicle you are usually required to stay with your vehicle,,,CA
+"IF NOT(driver, does, documents), THEN (ocers, for, them)",if a driver does not produce these documents ocers may conduct a limited search for them,,,CA
+"IF AND((ocer, does, something), (self, believe, rights)), THEN NOT(self, voice, objection)",if an ocer does something that you believe violates your rights you can voice your objection but you should not physically resist,,,CA
+"IF (self, turn, light), THEN NOT(self, Do, NO)",you can turn right at a red light if you do not see a no turn on red sign posted,,,CA
+"IF (eye, with, you), THEN (self, isA, street)",if a pedestrian makes eye contact with you they are ready to cross the street,,,CA
+"IF (orders, if, ict), THEN (signals, o, r)",follow their orders even if they c o n ict with ex is ting signs signals o r laws,,,CA
+"IF (Blind, blind, if), THEN (stop, at, corner)",blind inter sections an intersection is considered blind if it has no stop signs at any corner,,,CA
+"IF AND((self, isA, driver), (self, isA, vehicle)), THEN (self, isA, school)",if you are a commercial driver and are cited in a noncommercial vehicle you may also be eligible to at tend trac school,,,CA
+"IF NOT(driver, makes, mistake), THEN (self, gives, time)",this gives you time to react if another driver makes a mistake,,,CA
+"IF (driver, in, front), THEN (self, hasA, time)",you also will not have enough time to react if the driver in front of you brakes suddenly,,,CA
+"IF (point, before, counting), THEN (self, isA, closel)",if you pass the same point before you nish counting you are following to o closel y,,,CA
+"IF (vehicle, isA, you), THEN (Check, behind, know)",check trac behind you often to know if another vehicle is tailgating you,,,CA
+"IF (vehicles, isA, bright), THEN (Do, into, headlights)",if another vehicles lights are too bright do not look directly into the oncoming headlights,,,CA
+"IF (vehicle, by, gust), THEN (self, hasA, time)",you will have more time to react if your vehicle gets hit by a strong gust of wind,,,CA
+"IF (self, isA, wheel), THEN (steering, out, hands)",if you are not holding the wheel properly and a gust hits it can jerk the steering wheel out of your hands,,,CA
+"IF (passenger, under, years), THEN (ticket, if, seat)",if your passenger is under years old you can also get a ticket if they are not wearing their seat belt,,,CA
+"IF (self, isA, side), THEN AND((impact, push, back), (th, across, seat))",if you are struck from the side the impact could push you back and for th across the seat,,,CA
+"IF (seat, if, if), THEN (self, isA, seat)",they may ride in the front seat if there is no rear seat,,,CA
+"IF (danger, than, other), THEN (self, give, space)",if one danger is greater than the other give more space to the most dangerous situation,,,CA
+"IF (self, isA, hit-and-run), THEN (punishment, isA, severe)",the punishment is severe if you are convicted of a hit-and-run,,,CA
+"IF (anyone, isA, hurt), THEN (self, Call, right)",call right away if anyone is hurt,,,CA
+"IF (self, fail, repor), THEN (self, driving, privilege)",your driving privilege will be suspended if you fail to le a repor t,,,CA
+"IF (t, of, vehicle), THEN (Exit, on, side)",exit on the right side so you are away from trac if you must get ou t of the vehicle,,,CA
+"IF NOT(FSP, star, vehicle), THEN (self, hasA, charge)",if fsp can not star t your vehicle they will have it towed free of charge to a location,,,CA
+"IF AND(NOT(self, do, train), (warning, isA, hing)), THEN (self, Exit, vehicle)",if you do not see a train approaching and the warning l ights are not hing exit your vehicle,"IF AND(NOT(self, see, train), NOT(warning, isA, flashing)), THEN (self, Exit, vehicle)",,CA
+"IF (motorists, in, ic), THEN (Lane-use, isA, signals)",control signals are overhead signals indicating if motorists should drive in a specific lane,,,TX
+"IF (self, reduce, speed), THEN (self, make, truck)",youll make it easier for the truck driver if you slightly reduce your speed,,,TX
+"IF (he/she, hasA, lanes), THEN (self, Staying, center)",staying in the center lane also increases the truck drivers options if has to switch lanes to avoid a crash,,,TX
+"IF (rider, for, it), THEN (gust, of, wind)",strong winds a strong gust of wind can move a motorcycle across an entire lane if the rider isnt prepared for it,,,TX
+"IF (self, isA, shoulder), THEN (pull, as, can)",if there is a roadside shoulder pull as far onto it as you can,,,FL
+"IF (sidewalk, isA, available), THEN (Pedestrians, on, roadway)",pedestrians must not walk on the roadway if a sidewalk is available,,,FL
+"IF (roadway, at, point), THEN (Pedestrians, yield, right-of-way)",pedestrians must yield the to vehicles if crossing a roadway at any point other than within a crosswalk,,,FL
+"IF (self, isA, something), THEN (Emergenc, below, below)",if you are about to hit something see emergenc y braking below,,,FL
+"IF (self, hasA, extinguisher), THEN (Attempt, extinguish, fire)",attempt to extinguish the fire only if you have a portable extinguisher and the fire is small,,,FL
+"IF (self, isA, window), THEN (try, kick, side)",if you are unable to roll the window down try to kick out a side window,,,FL
+"IF (self, keep, vehicle), THEN (reach, in, case)",if you keep one of these in your vehicle be sure it is within reach in case of an emergenc y,,,FL
+"IF (vehicles, from, vie), THEN (vehicles, hasA, w)",even though large vehicles have several w mirrors other vehicles will be hidden from vie w if within the no spot,,,FL
+"IF (CMV, on, upgrade), THEN (space, in, case)",if you are stopped behind a cmv on an upgrade leave space in case the cmv dris back when it starts to move,"IF (CMV, on, upgrade), THEN (self, leave, space)",Vehicle Behavior,FL
+"IF (self, isA, feet), THEN (golf, on, side)",you can drive a golf cart on a side walk only if it is at least feet wide,,,FL
+"IF (vehicle, with, animal), THEN (crash, than, than)",this may result in a more serious crash than if your vehicle collided with the animal,,,FL
+"IF (Drivers, If, right), THEN (self, check, trac)",drivers manual if you prepare to pass on the right at an inter section check the trac ahead carefully,,,NY
+"IF (transmission, in, Park), THEN (vehicle, into, gear)",put the transmission in park or if your vehicle has a manual transmission put the transmission into gear,,,NY
+"IF (self, hasA, right-of-way), THEN NOT(self, do, right)",if you have the do not think of it as a complete right,,,NY
+"IF NOT(self, do, warning), THEN (Workers, isA, even)",workers can be close even if you do not see them immediately after the warning signs,,,NY
+"IF (court, for, days), THEN (driver, isA, immediately)",even if the court allows you to continue driving for days your driver license will be taken immediately,,,NY
+"IF (vehicle, on, track), THEN (self, learn, section)",you will learn later in the section what to do if your vehicle stalls or gets stuck on a track,,,NY
+"IF (self, isA, train), THEN (sign, of, tracks)",if there are multiple train tracks the sign will show the number of tracks,,,NY
+"IF (train, isA, approaching), THEN (train, from, tracks)",if a train is approaching run toward the train but away from the tracks at a angle,,,NY
+"IF (PAVEMENT, If, wheels), THEN NOT(self, do, steering)",running off the pavement if your wheels move o the pavement do not pull the steering wheel back,,,NY
+"IF (vehicle, before, yourself), THEN (self, get, seat)",if the vehicle sinks before you can remove yourself get into the back seat,,,NY
+"IF (self, decrease, speed), THEN (self, come, stop)",you must decrease your speed or if necessary come to a complete stop,,,NY
+"IF (self, isA, laws), THEN (self, ride, sidewalk)",never ride on a sidewalk if it is prohibited by local laws,,,NY
+"IF (motorcycle, with, windshield), THEN (Motorcyclists, wear, eye)",motorcyclists must also wear approved eye protection even if the motorcycle is equipped with a windshield,,,NY
+"IF (self, try, situation), THEN (self, isA, spots)",if you try to pass in this situation it is likely that you will enter one of the blind spots,,,NY
+"IF (self, isA, speed), THEN (self, isA, conditions)",even if you are driving within the posted speed limit you can still be ticketed for driving too fast for conditions,,,PN
+"IF (OBD, on, on), THEN (talk, with, auto)",if the obd light comes on talk with your auto dealer for more information,,,PN
+"IF (self, hasA, vehicle), THEN (defroster, of, air)",if you have a newer vehicle your defroster may be part of your air conditioning system,,,PN
+"IF (Below, for, drivers), THEN (MONITOR, if, travel)",below are some tips for drivers for snow squalls monitor watch the forecast if you plan to travel,,,PN
+"IF (self, isA, curves), THEN (look, at, inside)",if there are multiple curves look at the inside edge of each curve as far ahead as you can see,,,PN
+"IF (self, hasA, curb), THEN (pull, as, roadway)",if it has no curb pull as far off of the roadway as possible,,,PN
+"IF (self, isA, hill), THEN (wheels, as, diagram)",if you are parked on a hill turn your wheels as shown in the diagram,,,PN
+"IF (self, hasA, curb), THEN (roadway, as, possible)",if it has no curb you must pull as far off of the roadway as possible,,,PN
+"IF (trip, before, depart), THEN (com, see, see)",com to see if their trip route is clear before they depart,,,PN
+"IF (alternate, around, work), THEN (self, avoid, travel)",you may avoid travel delays if you choose an alternate route around the work zone,,,PN
+"IF (railroad, with, track), THEN NOT(self, do, train)",if you are stopped at a railroad crossing with more than one track do not start as soon as the train passes,,,PN
+"IF AND((self, reduce, speed), (self, keep, speed)), THEN (self, make, truck)",you will make it easier for the truck driver if you reduce your speed slightly and then keep your speed steady,,,PN
+"IF (something, does, happen), THEN (DO, RETALIATE, RETALIATE)",if something does happen do not retaliate,,,PN
+"IF (YOUR, In, vehicles), THEN (split, of, brake)",if your vehicle has brake failure in newer vehicles a split braking system reduces the possibility of total brake failure,,,PN
+"IF (self, YOU, DRIVING), THEN (YOU, MUST, A)",if you are driving behind a motorcycle you must a,,,PN
+"IF (space, on, side), THEN (self, entering, intersection)",before entering an intersection if there is not sufficient space on the other side to accommodate the vehicle,,,OH
+"IF (space, on, side), THEN (self, entering, intersection)",before entering an intersection if there is not sufficient space on the other side to accommodate the vehicle,,,OH
+"IF (self, run, train), THEN (self, isA, debris)",if you run from the train you may be hit by debris when the train strikes your vehicle,,,OH
+"IF (car, with, lights), THEN NOT(self, do, lights)",if a car approaches you with bright lights on do not stare at the lights,,,OH
+"IF (self, isA, DDC), THEN (self, contact, safety)",if you are interested in taking a ddc contact your local safety council,,,OH
+"IF (motorists, remembered, trucks), THEN (crashes, involving, trucks)",many of the crashes involving trucks could be avoided if motorists remembered a trucks limitations,,,OH
+"IF (seat, if, necessary), THEN (Passengers, as, pos-)",passengers should position their seats as far back as sible tilting the seat back slightly if necessary,,,IL
+"IF (train, strikes, vehicle), THEN (action, from, forward)",this action keeps everyone safe from the forward flying debris if the train strikes the vehicle,,,IL
+"IF OR((drivers, need, insurance), (vehicle, from, glove)), THEN (police, before, so)",if drivers need to obtain insurance or vehicle registration information from the glove box they should inform the police officer before doing so,,,IL
+"IF AND((driver, passes, bicyclist), (results, in, crash)), THEN (driver, face, charges)",if a driver passes too close to a bicyclist and it results in a crash the driver may face criminal charges,,,IL
+"IF (years, of, age), THEN (Persons, operate, Class)",persons may operate a class electric bicycle only if they are years of age or older,,,IL
+"IF (combustion, isA, used), THEN AND(NOT(self, exceed, displacement), NOT(self, require, operator))",if a combustion engine is used it may not exceed displacement and may not require the operator to shift gears,,,IL
+"IF (level, of, intoxication), THEN (Alcohol, affects, even)",alcohol affects your driving even if you are below the level of illegal intoxication,,,IL
+"IF (self, isA, DUI), THEN (offense, on, driving)",if you are convicted of dui the offense will permanently remain on your driving record,,,IL
+"IF (container, hasA, opened), THEN (alcohol, in, passenger)",it is illegal to have alcohol in the passenger area of a vehicle if the container has been opened,,,IL
+"IF (drivers, isA, age), THEN (self, isA, driver)",if your drivers license was suspended prior to age you will be required to successfully complete a driver remedial education course,,,IL
+"IF AND((driver, isA, arrested), (refuses, submit, testing)), THEN (privileges, for, months)",if a driver is arrested and refuses to submit to testing driving privileges will be pended for three months,,,IL
+"IF (drivers, in, crash), THEN NOT(self, notify, police)",if drivers are involved in a crash they should notify the police immediately,,,IL
+"IF AND((driver, isA, report), (self, isA, passenger)), THEN (passenger, make, report)",if the driver is unable to make the report and there is a passenger the passenger must make the report,,,IL
+"IF NOT(self, do, security), THEN (drivers, until, lawsuit)",if you do not post the required security s your drivers license may be pended until the lawsuit is settled,,,IL
+"IF (age, at, time), THEN (traffic, within, period)",if you are under age at the time of arrest two traffic violations within any period,,,IL
+"IF (person, hasA, drivers), THEN AND((driving, by, by), (license, isA, instruction))",if the person already has a drivers license the driving privileges granted by that license are reduced to an instruction permit,,,IL
+"IF (person, hasA, drivers), THEN (driving, granted, instruction)",if the person already has a drivers license the driving privileges granted are reduced to an instruction permit,,,IL
+"IF OR((driver, isA, medically), (self, operate, vehicle)), THEN (drivers, isA, canceled)",a drivers license may be canceled if a driver is found medically or visually unfit to safely operate a vehicle,,,IL
+"IF (sign, with, pointing), THEN (self, isA, school)",if the sign shows two children walking with a downward pointing arrow you are at a school crossing,,,IL
+"IF (expressway, in, direction), THEN (self, see, sign)",you may see this sign if attempting to enter an expressway ramp in the wrong direction,,,IL
+"IF (Walk, If, signal), THEN (roadway, in, direction)",walk walking person if you are facing the signal you may cross the roadway in the direction of the signal,,,IL
+"IF (Railroad, If, railroad), THEN (number, of, tracks)",railroad crossbuck sign if a railroad crossing has more than one track the number of tracks is on the sign below the crossbuck,,,IL
+"IF OR((self, isA, traffic signal), OR((signs, in, tion), (self, controlled, police))), THEN (CONTROLLED, isA, controlled)",controlled an intersection is controlled if there are traffic signals or signs in any direc tion or controlled by a police officer,,,NJ
+"IF (move, into, areas), THEN NOT(self, Do, movements)",do not make sudden movements particularly if the move ments involve reaching into areas not visible to the officer,,,NJ
+"IF (vehicle, with, beams), THEN (motorist, of, road)",if a vehicle is approaching with high beams a motorist should look to the right of the road until the vehicle passes,,,NJ
+"IF (Dashboard, If, lights), THEN (glare, for, motorist)",dashboard lights if dashboard lights are too bright they may create a glare for the motorist and impede vision,,,NJ
+"IF (vehicle, isA, litter), THEN (motorist, lose, license)",if the vehicle is moving when litter is thrown the motorist may lose license,,,NJ
+"IF (self, report, motorist), THEN (self, using, cell)",to report an aggressive motorist call or if using a cell phone call,,,NJ
+"IF (seconds, before, vehicle), THEN (motorist, for, stop)",if it takes at least three seconds before your vehicle passes theobject a motorist should have enough distance for a sudden stop,,,NJ
+"IF (vehicle, hasA, them), THEN AND((Headlights, on, beam), (lights, on, on))",headlights should be kept on low beam and fog lights should be turned on if the vehicle has them,,,NJ
+"IF (motorist, consider, safety), THEN (middle, of, block)",a motorist should always consider the following safety tips if at the middle of a block check intersections ahead for trafficcontrols,,,NJ
+"IF (EMERGENCY, If, emergency), THEN (motorist, in, mind)",emergency stops if an emergency highway stop is necessary a motorist should always keep several basic points in mind,,,NJ
+"IF (vehicle, hasA, brakes), THEN (self, adjust, wheel)",if the vehicle has antilock brakes abs they will adjust automatically if a wheel begins to lock,,,NJ
+"IF (motorist, from, brakes), THEN (chances, of, skid)",if the motorist can keep from using the brakes while turning this will lessen the chances of a skid,,,NJ
+"IF (PARKED, If, motorist), THEN (police, isA, notified)",parked vehicle crash if a motorist hits a parked vehicle the police must be notified,,,NJ
+"IF (report, by, police), THEN NOT(self, written, report)",a written report is not required if a report is filed by the police,,,NJ
+"IF (motorist, isA, up), THEN (he/she, as, aspossible)",if the motorist is shaken up should see a doctor as soon aspossible,,,NJ
+"IF (thinks, below, level), THEN (alcohol, affect, driving)",even if a motorist thinks is below the level of legal intoxication alcohol will affect driving,,,NJ
+"IF (transportation, isA, available), THEN OR((self, suggest, nap), (self, invite, guest))",if no other transportation is available suggest a nap or invite the guest to stay the night,,,NJ
+"IF AND((guest, in, drinking), (crash, after, party)), THEN (Hosts, in, lawsuit)",hosts may become involved in a lawsuit if a guest is involved in a drinking and driving crash after leaving the party,,,NJ
+"IF (motorist, isA, well), THEN (he/she, let, someone)",if a motorist is not feeling well should let someone else drive,,,NJ
+"IF (self, over, age), THEN (motorist, hasA, eyes)",if over age a motorist should have eyes checked every year,,,NJ
+"IF (radio, isA, he/she), THEN (people, with, hearing)",even people with good hearing can not hear well if the radio is blaring or is wearing earphones,,,NJ
+"IF (sentence, isA, mandatory), THEN OR((Chief, of, MVC), (courts, suspend, driving))",if the sentence is not mandatory the chief administrator of the mvc or the courts may suspend driving privileges,,,NJ
+"IF OR((truck, change, lanes), (self, make, emergency)), THEN (vehicle, in, area)",if the truck driver must quickly change lanes or make an emergency maneuver a vehicle in this area will be in the way,,,NJ
+"IF (t, whilecrossing, railroad), THEN (self, isA, transmission)",if you are driving a standard transmission vehicle do not shift gears whilecrossing railroad tracks,,,NJ
+"IF (way, isA, clear), THEN (cars, of, lane)",you may not pass cars ahead of you in your lane even if the way is clear,,,VG
+"IF (way, isA, clear), THEN (cars, of, lane)",you may not pass cars ahead of you in your lane even if the way is clear,,,VG
+"IF (condition, at, rail), THEN (number, on, emergency)",if a dangerous condition exists at a rail crossing call the number listed on the emergency sign,,,VG
+"IF (self, convicted, driving), THEN (self, isA, offense)",it is considered a misdemeanor criminal offense if convicted of reckless driving,,,VG
+"IF (stay, in, lane), THEN (self, driving, highway)",when driving on a highway stay in the right lane if you are driving slower than the traffic around you,,,VG
+"IF (youre, in, left), THEN (youre, breaking, law)",if you're still in the left lane when you reach the zone you're breaking the law,,,VG
+"IF AND((vehicle, isA, signaled), (self, isA, turn)), THEN (↨you, on, right)",may pass on the right if the vehicle you are passing has signaled and is making a left turn,,,VG
+"IF (vehicle, into, behind), THEN (self, prevents, traffic)",this prevents you from being pushed into oncoming traffic if another vehicle crashes into you from behind,,,VG
+"IF (high-beams, of, oncoming), THEN (avoid, at, lights)",if the of an oncoming car are on avoid looking directly at the bright lights,,,VG
+"IF NOT(driver, does, headlights), THEN NOT(self, do, headlights)",even if the other driver does not dim his headlights do not turn on your headlights,,,VG
+"IF (wind, isA, blowing), THEN (Rain, in, rain)",rain driving in heavy rain can be as hazardous as driving in fog especially if the wind is blowing,,,VG
+"IF (self, observe, drowsy), THEN OR((self, find, place), (self, ask, passenger))",if you observe a drowsy driver find a safe place to stop or ask a passenger to call law enforcement,,,VG
+"IF (driving, isA, impaired), THEN (influence, with, BAC)",if your driving is impaired you can be convicted of driving under the influence with a bac lower than,,,VG
+"IF (youre, about, effects), THEN OR((self, ask, pharmacist), (doctor, for, advice))",if youre uncertain about the effects of a drug ask your pharmacist or doctor for advice,,,VG
+"IF NOT(self, locate, anyone), THEN AND(NOT(self, leave, note), (scene, of, crash))",if you can not locate anyone leave a note that can be found easily at the scene of the crash,,,VG
+"IF (belt, as, pelvis), THEN (women, isA, safer)",pregnant women are much safer if buckled up by wearing the belt as low on the pelvis as possible,,,VG
+"IF (blind, if, to), THEN (period, at, time)",check your blind if you need to but not for too long a period at any one time,,,WA
+"IF (yours, in, crash), THEN (Always, get, helmet)",always get a new helmet if yours has been in a crash,,,WA
+"IF (anything, in, impairment), THEN (self, isA, driver)",if anything happens resulting in an impairment of your abilities you may not be a safe driver,,,WA
+"IF (way, before, lanes), THEN (self, Look, shoulder)",look over your shoulder to see if the way is clear before changing lanes,,,AZ
+"IF (self, miss, exit), THEN OR((self, exit, street), (continue, around, around))",you may exit at any street or continue around if you miss your exit,,,AZ
+"IF (self, isA, curb), THEN (vehicle, as, close)",if there is a curb pull your vehicle as close to the curb as possible,,,AZ
+"IF (self, taking, crash), THEN (one, isA, way)",no one is allowed to take the way if taking it means a crash may result,,,AZ
+"IF (interest, of, safety), THEN (self, see, persons)",in the interest of safety if you see persons crossing any street give them the,,,AZ
+"IF (self, stalls, tracks), THEN (self, Get, vehicle)",get out of your vehicle if it stalls on the tracks,,,AZ
+"IF (Streets, If, street), THEN (self, isA, center)",streets if you will be traveling on a street for several blocks it is best to stay in the center lane,,,AZ
+"IF (self, involved, crash), THEN (Road, With, Motorcycle)",sharing the road with a motorcycle motorcyclists are more vulnerable to injury than a car driver if involved in a crash,,,AZ
+"IF (sun, behind, you), THEN (self, oncoming, drivers)",if the sun is behind you oncoming drivers may have the glare problem,,,AZ
+"IF (Rain, in, rain), THEN (wind, as, thunderstorm)",rain driving in heavy rain can be hazardous especially if you also encounter gusty wind conditions such as in a thunderstorm,,,AZ
+"IF (beams, of, oncoming), THEN (avoid, at, lights)",if the high beams of an oncoming car are not dimmed avoid looking directly at the bright lights,,,AZ
+"IF (Drowsy, If, sleepy), THEN (self, isA, time)",drowsy if you find yourself feeling sleepy while driving it is already past the time to get off the road,,,AZ
+"IF (self, isA, traffic), THEN AND((Failure, stop, stop), (render, at, site))",failure to stop and render aid at the site if you are involved in a traffic crash,,,AZ
+"IF (drivers, above, level), THEN NOT(vehicle, start, start)",if the drivers alcohol level is above a certain level the vehicle will not start,,,AZ
+"IF (self, need, information), THEN (Executive, at, 602)",if you need additional information concerning the hearing procedure call the executive hearing office at,,,AZ
+"IF (gasoline, since, flames), THEN NOT(Do, use, water)",do not use water if gasoline is burning since this will spread the flames,,,AZ
+"IF AND((self, hasA, indication), (fire, beyond, control)), THEN (self, get, vehicle)",if you have any indication that the fire may be beyond your control get away from the vehicle,,,AZ
+"IF (vehicle, hasA, power), THEN (self, Stop, car)",stop the car push the brakes extra hard if your vehicle has power brakes,,,AZ
+"IF (year, if, damage), THEN (Conviction, for, failure)",conviction for failure to stop will result in your driving privilege being suspended for year if involving only damage to a vehicle,,,AZ
+"IF (self, Revoked, years), THEN (time, if, injury)",revoked for years not including the time you are incarcerated if involving a serious physical injury,,,AZ
+"IF (self, Revoked, years), THEN (time, if, death)",revoked for years not including the time you are incarcerated if involving a death,,,AZ
+"IF (self, hasA, time), THEN (motorcyclist, hasA, time)",even if you have enough time to turn an oncoming motorcyclist may not have time to safely change speed,,,MA
+"IF (self, pass, course), THEN NOT(self, do, motorcycle)",if you pass either course you do not need to take a motorcycle road test to get your motorcycle license,,,MA
+"IF (speed, isA, higher), THEN (speed, on, following)",even if the speed limit is higher your speed must be based on the following,,,MA
+"IF (self, isA, intersection), THEN (room, through, through)",if you are crossing an intersection make sure you have enough room to make it completely through,,,MA
+"IF (road, with, lane), THEN (lane, for, turn)",if coming from a road with a single lane you should stay in the right lane for the entire turn,,,MA
+"IF (self, isA, motorcycle), THEN (self, pass, sin)",if you are operating a motorcycle you may only pass sin gle file,,,MA
+"IF (self, hasA, cell), THEN (State, at, emergency)",if you have a cell phone call the state police at to report an emergency situation,,,MA
+"IF (self, isA, driving), THEN (RMV, review, case)",if you are arrested for aggressive driving the rmv may review your case,,,MA
+"IF (self, isA, threat), THEN AND((RMV, suspend, license), (registration, before, court))",the rmv can suspend your license and registration before a court date if you are a threat to public safety,,,MA
+"IF (self, isA, work), THEN (fine, isA, doubled)",if you are cited for speeding in a work area the fine will be doubled,,,MA
+"IF (self, angled, parking), THEN (exception, isA, is)",the only exception is if angled parking is allowed,,,MA
+"IF (signal, says, DONT), THEN NOT(Do, cross, cross)",do not cross if the signal says dont walk,,,MA
+"IF (riders, wore, bicycle), THEN AND((%, of, deaths), (self, disabling, injuries))",of deaths and disabling injuries could have been prevented if riders wore a proper bicycle helmet,,,MA
+"IF (self, tells, crash), THEN (self, isA, witness)",it also tells you what to do if there is a crash even if you are only a witness,,,MA
+"IF (officer, in, place), THEN (pull, over, directed)",if the officer directs you to pull over in a certain place pull over where directed,,,MA
+"IF (self, asked, vehicle), THEN AND((stay, from, traffic), (hands, in, plain))",if asked to get out of the vehicle stay safely away from traffic and keep hands in plain view,,,MA
+"IF (self, hasA, question), THEN (wait, until, officer)",if you have a question wait until the officer returns,,,MA
+"IF (self, find, something), THEN AND((self, hold, window), (wait, for, officer))",if you find something the officer requested hold it out the window and wait for the officer to return,,,MA
+"IF (questions, about, citation), THEN (self, ask, officer)",if you have questions about the citation you can ask the officer to clarify,,,MA
+"IF (anything, as, switches), THEN (self, call, ENS)",you should also call the ens number if you see anything suspicious such as tampering with rail switches along a railroad,,,MA
+"IF (Vehicle, into, Water), THEN AND((self, Unfasten, safety belt), (escape, through, window))",vehicle drives into water if your car drives into water unfasten your safety belt and escape through a window,,,MA
+"IF (self, hasA, power), THEN (self, open, water)",if you have power windows open them quickly before the water causes them to stop working,,,MA
+"IF (vehicle, before, out), THEN (climb, into, seat)",if your vehicle sinks before you can get out climb into the rear seat,,,MA
+"IF (self, hasA, phone), THEN (state, by, 911)",if you have a cellular phone you can contact the state police to report any emer gen cy by calling,,,MA
+"IF (anyone, isA, injured), THEN (Check, see, see)",check to see if anyone is injured,,,MA
+"IF (person, isA, breathing), THEN (Check, see, see)",check to see if the person is breathing,,,MA
+"IF AND((person, isA, breathing), (self, isA, resuscitation)), THEN (self, begin, CPR)",if the person is not breathing and you are certified in cardiopulmonary resuscitation cpr begin performing cpr immediately,,,MA
+"IF (person, isA, bleeding), THEN (put, on, wound)",if the person is bleeding put pressure directly on the wound,,,MA
+"IF (self, stay, scene), THEN AND((aid, if, possible), (call, for, emergency))",you must stay on the scene properly identify yourself give aid if possible and call for emergency assistance if needed,,,MA
+"IF (anyone, isA, injured), THEN (Check, see, see)",check to see if anyone is injured,,,MA
+"IF (self, hasA, phone), THEN (self, call, police)",if you have a cellular phone call the police,,,MA
+"IF (wires, on, vehicle), THEN (people, inside, emergency)",if electrical wires have landed on a vehicle tell the people inside to remain inside until emergency personnel arrive,,,MA
+"IF (owner, of, vehicle), THEN (photocopy, of, license)",if the owner of the vehicle is not physically present a photocopy of the license must be presented,,,MA
+"IF (proof, if, license), THEN (self, renewing, registration)",when renewing your registration you will need to show this proof again if the license originally presented has expired,,,MA
+"IF (proof, of, presence), THEN (application, indicate, indicate)",the application will indicate if you need to provide proof of the lawful presence,,,MA
+"IF (self, do, proof), THEN (self, renew, RMV)",if you do need to provide proof you can only renew in an rmv service center,,,MA
+"IF (Duplicate, If, registration), THEN (duplicate, by, steps)",duplicate registration if you lose your registration certificate you may apply for a duplicate by taking one of the following steps,,,MA
+"IF (transaction, for, you), THEN (self, Contact, agent)",contact your agent to see if they can process this transaction for you,,,MA
+"IF (self, hasA, vehicle), THEN NOT(self, use, period)",can not use the period to transfer your registration if you have retained the currently registered vehicle,,,MA
+"IF (vehicle, in, state), THEN (self, hasA, sales)",if your vehicle has been reg is tered in another state you may have to pay some sales tax,,,MA
+"IF (vehicle, in, name), THEN (self, choose, plate)",if you have a vehicle registered in your name you may choose to apply for a plate,,,MA
+"IF (veteran, owns, vehicles), THEN (registration, for, vehicles)",if the veteran owns additional vehicles registration fees must be paid for those vehicles,,,MA
+"IF (veteran, owns, vehicles), THEN (excise, for, vehicles)",if the veteran owns additional vehicles excise tax must be paid for those vehicles,,,MA
+"IF (vehicle, from, owner), THEN (self, hasA, inspection)",you must have a new inspection even if the vehicle bears a valid sticker from the previous owner,,,MA
+"IF (motor, passes, inspection), THEN (sticker, inside, windshield)",if your motor vehicle passes the annual inspection a sticker will be affixed to the lower right inside windshield of your vehicle,,,MA
+"IF (motorcycle, passes, inspection), THEN (sticker, isA, license)",if your motorcycle passes the inspection a sticker will be affixed to your license plate,,,MA
+"IF (motor, fails, inspection), THEN (self, receive, reject)",if your motor vehicle fails the inspection you will receive a reject sticker,,,MA
+"IF (motorcycle, fails, inspection), THEN NOT(self, receive, sticker)",if your motorcycle fails the inspection you will not receive a new sticker,,,MA
+"IF (problem, isA, safety-related), THEN (self, hasA, problem)",if the problem is you must have the problem fixed immediately,,,MA
+"IF (problem, involves, vehicle), THEN (days, for, inspection)",if the problem involves vehicle emissions you have days to correct the problem and resubmit your vehicle for inspection,,,MA
+"IF (vehicle, on, ways), THEN (self, obtain, registration)",you must also obtain a registration if you are going to operate the vehicle on public ways,,,MA
+"IF (vehicle, isA, nontitled), THEN (bill, of, sale)",if the vehicle is nontitled you must bring the bill of sale when applying for a title,,,MA
+"IF (insurance, of, salvage), THEN (company, for, salvage)",if your insurance company takes possession of the salvage ve hi cle the company is responsible for applying for a salvage title,,,MA
+"IF (questions, about, salvage), THEN (RMV, at, 857-368-8000)",if you have questions about the salvage inspection process call the rmv contact center at,,,MA
+"IF AND((vehicle, isA, insured), (insurer, retains, vehicle)), THEN (self, hasA, title)",if the vehicle is insured and the insurer retains the vehicle you will have to assign your title to the insurer,,,MA
+"IF (self, hasA, vehicle), THEN (self, drive, registration)",if you have such a vehicle you may drive it legally when a new registration is issued,,,MA
+"IF (vehicle, passed, inspection), THEN (self, apply, vehicle)",if your vehicle passed inspection you may apply for a vehicle registration,,,MA
+"IF (self, isA, odometer), THEN (af, of, fact)",if you are correcting an odometer reading you must submit a notarized af da vit of this fact,,,MA
+"IF (self, hasA, transmission), THEN AND((self, set, brake), (shift, into, park))",if you have an automatic transmission set your parking brake and shift into park,,,MA
+,,,,
+"IF (road, than, long), THEN (self, includes, road)",if the road is less than long it includes the whole road,,,QL
+"IF (BExample, If, lane), THEN (wayto, in, lane)",a bexample if your lane comes to an end you must give wayto traffic already in the lane you are moving to,,,QL
+"IF OR((concentration, of, blood), (breath, than, 0)), THEN (alcohol, over, limit)",no alcohol limit you will be over this limit if the concentration of alcoholin your blood or breath is more than,,,QL
+"IF (drugs, with, alcohol), THEN (risk, isA, greater)",if you combine drugs with alcohol the risk is even greater,,,QL
+"IF (influence, of, drugs), THEN NOT(insurance, does, apply)",if you crash while driving under the influence of drugs your comprehensive insurance does not apply,,,QL
+"IF (self, carry, containers), THEN (difference, in, height)",if you carry freight containers you should be aware of the difference in the height of some containers,,,QL
+"IF (signs, of, fatigue), THEN (self, rest, signis)",if you experience any of these signs of fatigue you should rest until the signis no longer present,,,QL
+"IF (self, isA, time), THEN (number, in, front)",if there is a time limit it is shown by the number in front of the p,,,QL
+"IF (park, for, safety), THEN (self, includes, traffic light)",this includes a traffic light or if you have to stopor park for safety,,,QL
+"IF (self, continue, mobility), THEN (application, for, Disability)",if you continue to experience severe functional mobility impairment you will need to make a new application for an australian disability parking permit,,,QL
+"IF (Tips, if, walking), THEN (self, see, Drink)",tips pedestrians take care if walking after drinking alcohol see drink walking page,,,QL
+"IF (wheelchairs, If, wheelchair), THEN (rules, apply, you)",motorised wheelchairs if you are using a motorised wheelchair extra rules apply to you,,,QL
+"IF OR((Pedestrians, If, DONT), (self, illuminated, symbol)), THEN NOT(self, do, road)",pedestrians obeying traffic lights stop if you face a red dont walk or illuminated red pedestrian symbol do not cross the road,,,QL
+"IF OR((self, Walk, WALK), (self, illuminated, symbol)), THEN (start, with, care)",walk if you face a green walk or illuminated green pedestrian symbol start to cross the road with care,,,QL
+"IF (bicycle, on, on), THEN (bicycle, for, you)",if you wave the bicycle rider on you should wait for them to pass otherwise the bicycle rider must wait for you,,,QL
+"IF (conditions, isA, bad), THEN (count, about, seconds)",if the conditions are bad count this takes about four seconds,,,QL
+"IF (front, of, vehicle), THEN (self, isA, room)",if the front of your vehicle passes the object before you finish counting you are too close so leave more room,,,QL
+"IF (self, hit, speed), THEN (cent, of, killed)",if you hit a pedestrian at this speed they have an almost per cent chance of being killed,,,QL
+"IF (medications, youre, yourdriving), THEN (self, Check, doctor)",check with your doctor if any medications youre taking affect yourdriving ability,,,QL
+"IF (travel, oo, ride), THEN (self, co, b)",if yo u travel t oo close to a ride r they co uld come off their b icyc le,,,TS
+"IF (yo, in, l), THEN (Rig, turn, Turn)",rig ht lane must turn right turn right if yo u are in the right l ane at an inte r se ction,,,TS
+"IF (Indicate/signal, if, practicable), THEN (exit, before, use)",left if practicable as you are passing the exit before the one you wish to use,,,WEA
+"IF (back, towards, you), THEN AND((self, stop, vehicle), (wait, for, instructions))",if their back is towards you you must stop your vehicle and wait for instructions before driving on,,,WEA
+"IF (self, isA, trafc), THEN (side, of, vehicle)",if there is too much trafc it may be safer to get out on the side of the vehicle away from the trafc,,,WEA
+"IF OR((railway, If, hear), (self, see, train)), THEN (self, leave, car)",stalled on a railway crossing if you hear or see a train coming leave the car immediately,,,WEA
