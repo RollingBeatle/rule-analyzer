@@ -7,9 +7,12 @@ import random
 from urllib.parse import unquote
 import pandas as pd
 import os
+import PyPDF2
 
+#Managed the dataFrame as a global variable
 DataPd = None
 
+#Clean save of the urls
 def saveCSV(savedArr):
     df = pd.DataFrame(columns=['URL', 'visited'])
     df['URL'] = savedArr
@@ -18,16 +21,20 @@ def saveCSV(savedArr):
     global DataPd 
     DataPd = df
 
+#Loading previous work
 def readDownload():
     df = pd.read_csv("./results/incidentsURL.csv")
-    
+    global DataPd 
+    DataPd = df
     missingPDF = df[df['visited'] == 0].values
 
     downloadNew(missingPDF)
 
+#The actual downloading using an array of the links
 def downloadNew(ReportLinks):
 
     counter = 0
+    global DataPd
     for link in ReportLinks:
         delay = random.uniform(1,5)
         time.sleep(delay)
@@ -53,16 +60,33 @@ def downloadNew(ReportLinks):
             with open(filename, "wb") as file:
                 file.write(content)
             print('file saved')
+            
+            DataPd.at[counter,'visited'] = 1
+
         else:
             print(f'error code {response.status_code}')
+    DataPd.to_csv('./results/incidentsURL.csv')
     
+def PDFReading(pdfFile):
+    pdf_file = open(pdfFile, 'rb')
+    pdfReader = PyPDF2.PdfFileReader(pdf_file)
+    pdfForm = pdfReader.get_fields()
+    print(pdfForm)
+    page = pdfReader.getPage(1)
 
+    #print(page.items())
+
+    
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--company', '-c', type=str, help='company to look for')
     parser.add_argument('--save', '-s', type=bool, help='save into csv')
+    parser.add_argument('--read', '-r', type=bool, help='Read pdf mode, this bypasses scrapping')
+    
     args = parser.parse_args()
-
+    if args.read:
+        PDFReading("./results/pdfs/Apple_022123.pdf")
+        return
     companyText = args.company
     driver = webdriver.Chrome()
     url = 'https://www.dmv.ca.gov/portal/vehicle-industry-services/autonomous-vehicles/autonomous-vehicle-collision-reports/'
