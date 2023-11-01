@@ -1,10 +1,17 @@
-from gensim import corpora, models
+from gensim import corpora, models, matutils
 import numpy as np
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import pandas as pd
 import json
+# import spacy
+# import pyLDAvis
+# import pyLDAvis.gensim
+from pprint import pprint
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import CountVectorizer
+
 
 nltk.download('stopwords')
 nltk.download('punkt')
@@ -22,14 +29,14 @@ def main():
     print("-----------------------------")
     for index in range(len(catTopics)):
         natLang = catTopics[index]['Natural Language Sentence']
-        print(natLang)
+        #pprint(natLang)
         #Getting the stop words to remove from the ruleset
         stop_words = set(stopwords.words('english'))
         #Cleaning and tokenize
         cleanedWords = [word_tokenize(doc.lower()) for doc in natLang]
         cleanedWords = [[word for word in doc if word.isalnum() and word not in stop_words] for doc in cleanedWords]
 
-        print(cleanedWords)
+        #pprint(cleanedWords)
 
         #corpus 
         dictionary = corpora.Dictionary(cleanedWords)
@@ -40,7 +47,8 @@ def main():
         modelLDA = models.LdaModel(corpus, num_topics=3, id2word= dictionary)
 
         document_topics = [modelLDA[doc] for doc in corpus]
-        print(document_topics)
+        print("the topics............................")
+        pprint(document_topics)
         # Calculate transition probabilities based on topic distributions
         transition_matrix = np.zeros((modelLDA.num_topics, modelLDA.num_topics))
 
@@ -60,12 +68,86 @@ def main():
         print("Sampled Topic Sequence:", sampled_sequence)
         currentTopicList = []
         for topic_id in sampled_sequence:
-            print(modelLDA.print_topic(topic_id))
+            pprint(modelLDA.print_topic(topic_id))
+            print('***************')
             currentTopicList.append(modelLDA.print_topic(topic_id))
         categoryResultsDic[categories[index]] = currentTopicList
     for key, value in categoryResultsDic.items():
-        print(f"{key}: {json.dumps(value)}")
+        pprint(f"{key}: {json.dumps(value)}")
         print('-'*500)
+
+
+
+def cleaningAndTokenizing(df:pd.DataFrame):
+    
+    column_list = df['Natural Language Sentence'].tolist()
+    #Tokenize
+    tokenized_sentences = [word_tokenize(sentence) for sentence in column_list]
+    #Lowercase
+    tokenized_sentences = [[word.lower() for word in sentence] for sentence in tokenized_sentences]
+    #Removing stopwords
+    stop_words = set(stopwords.words('english'))
+    tokenized_sentences = [[word for word in sentence if word not in stop_words] for sentence in tokenized_sentences]
+    #lemmanization
+    lemmatizer = WordNetLemmatizer()
+    tokenized_sentences = [[lemmatizer.lemmatize(word) for word in sentence] for sentence in tokenized_sentences]
+    pprint(tokenized_sentences)
+
+    return tokenized_sentences
+
+def convertToNumberModel(processedDocs):
+    #Create vectorizer
+    #vectorizer = CountVectorizer()
+    #Fit the text into a vector
+    #X = vectorizer.fit_transform(processedDocs)
+    dictionary = corpora.Dictionary(processedDocs)
+    corpus = [dictionary.doc2bow(doc) for doc in processedDocs]
+    #corpus = [doc.split() for doc in processedDocs]
+    
+    #corpus = matutils.Sparse2Corpus(X, documents_columns=False)
+    
+    #model
+    lda_model = models.LdaModel(corpus, id2word=dictionary, num_topics=16, passes=10)
+
+    #Extract Document Topics
+    document_topics = [lda_model.get_document_topics(doc) for doc in corpus]
+    pprint(document_topics)
+    transitionMatrix(lda_model, document_topics)
+    pprint(lda_model.print_topics())
+
+def transitionMatrix(model, topics):
+
+    topicNum = model.num_topics
+    print(topicNum)
+    transitionMtx = np.zeros((topicNum, topicNum))
+    for doc_topics in topics:
+        for i, j in zip(doc_topics[:-1], doc_topics[1:]):
+            transitionMtx[i[0]][j[0]] += 1
+
+    # Normalize transition matrix
+    row_sums = transitionMtx.sum(axis=1, keepdims=True)
+    #row_sums[row_sums == 0] = 1
+    transitionMtx = np.where(row_sums == 0, 1 / topicNum, transitionMtx / row_sums)
+    #transitionMtx/=row_sums
+
+    # Print the transition matrix
+    print("Transition Matrix:")
+    pprint(transitionMtx)
+    initial_topic = np.random.randint(topicNum)  # Choose a random initial topic
+    num_steps = 5
+    sampled_sequence = sample_from_markov_chain(initial_topic, transitionMtx, num_steps, model)
+    print("Sampled Topic Sequence:", sampled_sequence)
+    currentTopicList = []
+    for topic_id in sampled_sequence:
+        pprint(model.print_topic(topic_id))
+        print('***************')
+        currentTopicList.append(model.print_topic(topic_id))
+    # categoryResultsDic[categories[index]] = currentTopicList
+    # for key, value in categoryResultsDic.items():
+    #     pprint(f"{key}: {json.dumps(value)}")
+    #     print('-'*500)
+
+
 
 def sample_from_markov_chain(initial_topic, transition_matrix, num_steps, modelLDA):
     current_topic = initial_topic
@@ -92,4 +174,7 @@ def separateByCategories(df:pd.DataFrame):
 
 
 if __name__ == "__main__":
-    main()
+    df = pd.read_excel('./data/Driving_Rules_October26.xlsx', sheet_name="Rules", engine="openpyxl")
+    cleaned = cleaningAndTokenizing(df)
+    convertToNumberModel(cleaned)
+    #main()
